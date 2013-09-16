@@ -32,25 +32,26 @@
 
 <body <?php body_class(); ?>>
 <div id="navbar">
-<header class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <h1>
-	<a class="logo" href="/">
-      linux游戏站
-    </a>
-</h1>
+	<header class="navbar navbar-default" role="navigation">
+  	<!-- Brand and toggle get grouped for better mobile display -->
+  		<h1>
+			<a class="logo" href="<?php echo site_url(); ?>">
+      			<?php bloginfo('name'); ?>
+    			</a>
+		</h1>
 
 
-    <ul id ="menu" class="menu">
-	  <?php wp_nav_menu( array(
-				'theme_location' =>	'header-menu','menu_class' => 'menu'
+		<ul id ="menu" class="menu">
+	  		<?php wp_nav_menu( array(
+				'theme_location' =>  'header-menu',
+				'menu_class' => 'menu'
 			) ); ?>
-    </ul>
+    		</ul>
 
    
    
-</header>
- </div>
+	</header>
+</div>
 
 
   <div id="contentarea" class="container">

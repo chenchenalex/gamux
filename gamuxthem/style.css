@@ -1,0 +1,130 @@
+/*
+Theme Name: Gamux
+Theme URI: http://www.gamux.org
+Description: A simple responsive theme built with Bootstrap
+Author: Gamux Team
+Author URI: http://www.gamux.org
+Version: 0.1-alpha
+Tags: responsive, white, bootstrap
+
+License: GPL v3
+License URI: http://www.gnu.org/licenses/gpl.html
+
+*/
+
+@import url('bootstrap/css/bootstrap.min.css');
+* {
+	font-family: Arial, sans-serif;
+	font-size:15px;
+}
+html{
+   margin-left:-10px;
+}
+
+body {
+	font-family: Arial,sans-serif;
+	font-size: 15px;
+	padding-bottom: 40px;
+	width:100%;
+}
+img {
+	border: none;
+}
+/* header
+------------------------------------------------------------- */
+#navbar {
+	width: 100%;
+	margin: auto;
+	height:124px;
+	background:url("images/header5.png") repeat scroll center 0px transparent;
+	margin-top:-20px;
+}
+header{
+	height:124px;
+	outflow:hidden;
+	width:960px;
+	position:relative;
+	margin:0px auto;
+}
+
+header h1 {
+    position: absolute;
+    left: 0px;
+    top: 40px;
+}
+header h1 a{
+display: block;
+width: 170px;
+height: 45px;
+overflow: hidden;
+text-indent: -999em;
+background: url("images/header5.png") repeat scroll center 0px transparent;
+background-position: 0px 120px;
+}
+
+.menu li{
+	display:inline;
+	list-style-type: none;
+}
+
+#menu{
+	position: absolute;
+	left: 270px;
+	top: 42px;
+	
+}
+#menu a{
+	color: #fff;
+	float: left;
+	padding: 0 0 0 40px;
+	text-decoration: none;
+}
+.dropdown-menu {
+	width: 275px;
+}
+
+.search{
+	position: absolute;
+	left: 800px;
+	top: 50px;
+}
+
+.search button{
+	float:left
+}
+.input-group-addon  {
+	width: 70px;
+}
+.input-group {
+	margin-bottom: 10px;
+}
+#loginform {
+	margin-left: 10px;
+}
+#loginform .pull-right {
+	margin-right: 10px;
+}
+/*index,page,home etc.
+------------------------------------------------------------- */
+#containerarea {
+	margin: auto;
+}
+.container {
+	margin-top: -20px;
+}
+#content {
+	margin-right: 5px !important;
+	margin-left: 5px !important;
+}
+#post {
+	margin-right: 5px !important;
+	margin-left: 5px !important;
+}
+/* Sidebar
+-------------------------------------------------------------- */
+.sidebar {
+	margin-top: 35px;
+}
+
+/* footer
+-------------------------------------------------------------- */

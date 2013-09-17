@@ -22,8 +22,7 @@
     
     <!-- Le styles -->
     <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
-
-    <?php wp_enqueue_script("jquery"); ?>
+    <?php wp_enqueue_script('jquery'); ?>
     <?php wp_head(); ?>
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo get_bloginfo('rss2_url'); ?>" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="<?php bloginfo('comments_rss2_url'); ?>" />
@@ -32,25 +31,40 @@
 
 <body <?php body_class(); ?>>
 <div id="navbar">
-	<header class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-default" role="navigation">
   	<!-- Brand and toggle get grouped for better mobile display -->
   		<h1>
 			<a class="logo" href="<?php echo site_url(); ?>">
       			<?php bloginfo('name'); ?>
     			</a>
 		</h1>
-
-
+		<script type='text/javascript' src="<?php bloginfo('template_url'); ?>/js/loginform.jquery.js"></script>		
 		<ul id ="menu" class="menu">
 	  		<?php wp_nav_menu( array(
 				'theme_location' =>  'header-menu',
 				'menu_class' => 'menu'
 			) ); ?>
-    		</ul>
+			<li id="toplogin">
+                <a id="login-trigger" href="#">
+                    Log in <span>▼</span>
+                </a>
+                <div id="toplogin-content">
+                    <form>
+                        <fieldset id="toplogininput">
+                            <input id="username" type="email" name="Email" placeholder="Your email address" required>
+                            <input id="password" type="password" name="Password" placeholder="Password" required>
+                        </fieldset>
+                        <fieldset id="toploginaction">
+                            <input type="submit" id="submit" value="Log in">
+                            <label><input type="checkbox" checked="checked"> Keep me signed in</label>
+                        </fieldset>
+                    </form>
+                </div>
+            </li>
+			
+		</ul>
 
-   
-   
-	</header>
+	</nav>
 </div>
 
 

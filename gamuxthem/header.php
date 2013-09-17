@@ -37,8 +37,7 @@
 			<a class="logo" href="<?php echo site_url(); ?>">
       			<?php bloginfo('name'); ?>
     			</a>
-		</h1>
-		<script type='text/javascript' src="<?php bloginfo('template_url'); ?>/js/loginform.jquery.js"></script>		
+		</h1>			
 		<ul id ="menu" class="menu">
 	  		<?php wp_nav_menu( array(
 				'theme_location' =>  'header-menu',

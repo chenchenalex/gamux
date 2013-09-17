@@ -35,8 +35,7 @@
     <?php wp_footer(); ?>
 	<!-- Le javascript
     ================================================== -->
-	<script src="bootstrap/js/bootstrap.js"></script>
-	<script src="bootstrap/js/jquery-2.0.3.js"></script>
+	<script src="js/jquery-2.0.3.js"></script>
 
   </body>
 </html>

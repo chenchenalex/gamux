@@ -31,8 +31,8 @@
 
 <body <?php body_class(); ?>>
 <div id="navbar">
-	<nav class="navbar navbar-default" role="navigation">
-  	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="head">
+  	
   		<h1>
 			<a class="logo" href="<?php echo site_url(); ?>">
       			<?php bloginfo('name'); ?>
@@ -43,7 +43,11 @@
 				'theme_location' =>  'header-menu',
 				'menu_class' => 'menu'
 			) ); ?>
-			<li id="toplogin">
+	    
+			
+		</ul>
+
+	<li id="toplogin">
                 <a id="login-trigger" href="#">
                     Log in <span>▼</span>
                 </a>
@@ -60,11 +64,8 @@
                     </form>
                 </div>
             </li>
-			
-		</ul>
-
-	</nav>
+	</div>
 </div>
 
 
-  <div id="contentarea" class="container">
+  <div id="contentarea" class="container clearfix">

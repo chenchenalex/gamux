@@ -26,9 +26,33 @@ body {
 	font-size: 15px;
 	padding-bottom: 40px;
 	width:100%;
+	background: #f6f6f6;
 }
 img {
 	border: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0em;
+	line-height: 23px;
+}
+.clearfix{
+	zoom: 1;
+	
+}
+
+.clearfix:before, .clearfix:after {
+content: "";
+display: table;
+}
+
+.clearfix:after {
+clear: both;
 }
 /* header
 ------------------------------------------------------------- */
@@ -47,12 +71,47 @@ header{
 	margin:0px auto;
 }
 
-header h1 {
+#navbar h1 {
     position: absolute;
     left: 0px;
     top: 40px;
 }
-header h1 a{
+
+#toplogin{
+	width: 265px;
+	float: right;
+	margin-top: 60px;
+	margin-right: 30px;
+}
+
+#toplogin a{
+    color: #FFFFFF;
+	
+    font-size: 18px;
+    list-style-type: none;
+}
+
+#toplogin-content{
+	width: 500px;
+}
+.head {
+height: 124px;
+overflow: hidden;
+position: relative;
+width: 960px;
+margin: 0 auto;
+}
+
+#toplogininput{
+    background: whitesmoke;
+    float: right;
+
+
+    width: 40px;
+}
+
+
+#navbar h1 a{
 display: block;
 width: 170px;
 height: 45px;
@@ -70,7 +129,7 @@ background-position: 0px 120px;
 #menu{
 	position: absolute;
 	left: 270px;
-	top: 42px;
+	top: 60px;
 	
 }
 #menu a{
@@ -109,11 +168,72 @@ background-position: 0px 120px;
 
 /*index,page,home etc.
 ------------------------------------------------------------- */
-#containerarea {
-	margin: auto;
+#contentarea {
+	width: 960px;
+	margin: 0 auto;
+	background: #efefef;;
+}
+
+.main{
+	padding: 19px 19px 16px 0;
+	float: left;
+	border-right: 1px solid #c9c9c9;
+	width: 740px;
+	background: #f6f6f6;
+	min-height: 800px;
 }
 .container {
 	margin-top: -20px;
+}
+
+#slide{
+	border: 1px black dashed;
+	width:740px;
+	height:220px;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 16px;
+}
+
+.tit {
+padding: 12px 10px 8px;
+border-bottom: 2px solid #ddd;
+font-weight: bold;
+height: 10px;
+}
+
+.tit a {
+margin-left: 20px;
+color: #868686;
+font-size: 12px;
+font-weight: normal;
+}
+
+.applist {
+padding: 22px 0 2px 10px;
+font-size: 12px;
+line-height: 19px;
+width:740px;
+height:339px;
+border:1px black dashed;
+}
+
+.recomend-cen {
+	margin: 0 0 22px -12px;
+	width:752px;
+	height:92px;
+	border:1px black dashed;
+}
+
+.recomend-cen a{
+	display: inline-block;
+	width: 176px;
+	height: 89px;
+	margin-left: 12px;
+	overflow: hidden;
+	-webkit-transition: opacity 0.2s linear;
+	-moz-transition: opacity 0.2s linear;
+	transition: opacity 0.2s linear;
 }
 #content {
 	margin-right: 5px !important;
@@ -126,8 +246,84 @@ background-position: 0px 120px;
 /* Sidebar
 -------------------------------------------------------------- */
 .sidebar {
-	margin-top: 35px;
+	width: 182px;
+	float: right;
+	padding: 19px 9px 8px 9px;
 }
 
+.searchbox{
+background: url(images/image2.png) no-repeat;
+height: 34px;
+margin-bottom: 8px;
+position: relative;
+}
+
+.allapp {
+position: relative;
+margin: 7px 0 21px;
+}
+
+.sidebar .tit a {
+float: right;
+color: #868686;
+font-size: 12px;
+font-weight: normal;
+margin-left: 20px;
+}
+
+.btn-myfile {
+display: block;
+color: #565656;
+line-height: 23px;
+padding: 10px 0;
+background: url(http://resource.xiaomi.net/miuimarket/app/app-sprite1.png) 0 -43px no-repeat;
+width: 180px;
+text-align: center;
+font-weight: bold;
+}
+
+.allapp i {
+margin-right: 12px;
+}
+
+.icons-list {
+background-position: 0 -292px;
+}
+
+.icons {
+display: inline-block;
+width: 20px;
+height: 20px;
+vertical-align: text-top;
+background-image: url(images/image2.png);
+}
+
+.ranklist ul {
+padding: 6px 0;
+line-height: 19px;
+}
+
+#toplist{
+	width:182px;
+	height:1050px;
+}
 /* footer
 -------------------------------------------------------------- */
+
+.site-footer {
+height: 100px;
+text-align: center;
+padding: 45px 15px;
+color: #9c9c9c;
+background: #393939;
+}
+
+.footer_row{
+    display: inline-block;
+	
+    float: left;
+}
+
+.gnulinux{
+	float:right
+}

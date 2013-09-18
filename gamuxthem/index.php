@@ -1,9 +1,25 @@
 <?php get_header(); ?>
-<div class="row">
+
+
 <div class="main">
-	<div id="slide">
-	</div>
-	<section id="content" class="row">
+	  <div id="slide">
+	  </div>
+	  <div class="recbox">
+		<div class="tit">热门游戏
+			<a href="/allFeaturedList">查看全部&gt;</a>
+		</div>
+		<ul class="applist app-push clearfix">
+		</ul>
+	  </div>
+	  <div class="recomend-cen">
+	  </div>
+	  <div class="recbox">
+		<div class="tit">最新游戏
+			<a href="/allFeaturedList">查看全部&gt;</a>
+		</div>
+		<ul class="applist app-push clearfix">
+	  </div>
+	  <section id="content" class="row">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<div id="post" class="row">
 			<div class="row">
@@ -19,14 +35,18 @@
 			<div class="row">
 			<?php comments_template('', true); ?>
 			</div>
-		</div>
+		</div>s
 		<?php endwhile; ?>
 		<?php else: ?>
 		<p>抱歉，未找到此文章。</p>
 		<?php endif; ?>
-	</section>
+	  </section>
 </div>
-<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
-<?php get_sidebar(); ?>
-</div></div>
-<?php get_footer(); ?> 
+<!-- main end -->
+<!-- right sidebar begin -->
+	<?php get_sidebar(); ?>
+<!-- sidebar end -->
+</div>
+<!-- footer begin -->
+	<?php get_footer(); ?> 
+<!-- footer end -->

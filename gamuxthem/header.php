@@ -50,8 +50,8 @@
                 <div id="toplogin-content">
                     <form>
                         <fieldset id="toplogininput">
-                            <input id="username" type="email" name="Email" placeholder="Your email address" required>
-                            <input id="password" type="password" name="Password" placeholder="Password" required>
+                            <input id="username" type="text" name="Email" placeholder="你的用户名" required>
+                            <input id="password" type="password" name="Password" placeholder="输入密码" required>
                         </fieldset>
                         <fieldset id="toploginaction">
                             <input type="submit" id="submit" value="Log in">

@@ -24,7 +24,6 @@ html{
 body {
 	font-family: Arial,sans-serif;
 	font-size: 15px;
-	padding-bottom: 40px;
 	width:100%;
 	background: #f6f6f6;
 }
@@ -60,9 +59,25 @@ clear: both;
 	width: 100%;
 	margin: auto;
 	height:124px;
-	background:url("images/header5.png") repeat scroll center 0px transparent;
 	margin-top:-20px;
+	background:url("images/header5.png") repeat scroll center 0px transparent;
 }
+
+.page_item .current_page_item page-item-5 page-item-2{
+	background:url("images/header5.png") repeat scroll center 0px transparent;
+}
+
+.menu li {
+float: left;
+height: 37px;
+width: 115px;
+padding: 2px 3px 3px 2px;
+overflow: hidden;
+position: relative;
+display: inline;
+margin-right: 20px;
+}
+
 header{
 	height:124px;
 	outflow:hidden;
@@ -78,10 +93,9 @@ header{
 }
 
 #toplogin{
-	width: 265px;
+	width: 275px;
 	float: right;
 	margin-top: 60px;
-	margin-right: 30px;
 }
 
 #toplogin a{
@@ -238,6 +252,7 @@ border:1px black dashed;
 #content {
 	margin-right: 5px !important;
 	margin-left: 5px !important;
+	display: none;
 }
 #post {
 	margin-right: 5px !important;
@@ -256,6 +271,13 @@ background: url(images/image2.png) no-repeat;
 height: 34px;
 margin-bottom: 8px;
 position: relative;
+}
+
+.sidepic {
+display: inline-block;
+width: 182px;
+height: 116px;
+border:1px black dashed;
 }
 
 .allapp {
@@ -305,7 +327,6 @@ line-height: 19px;
 
 #toplist{
 	width:182px;
-	height:1050px;
 }
 /* footer
 -------------------------------------------------------------- */
@@ -325,5 +346,6 @@ background: #393939;
 }
 
 .gnulinux{
-	float:right
+	float:right;
+	margin-right:100px;
 }

@@ -1,6 +1,7 @@
 <div class="sidebar">
 	<div class="searchbox">
 	</div>
+	<a href="" class="sidepic" target="_blank">这里放个小图片</a>
 	<div class="allapp">
 		 <a href="" class="btn-myfile" >
    		 <i class="icons icons-list"></i>所有应用分类

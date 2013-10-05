@@ -50,10 +50,10 @@
 		<div id="toplogin">
             <form>
 				<div>
-					<input id="username" type="text" name="Email" placeholder="你的用户名" required>
-					<input id="password" type="password" name="Password" placeholder="输入密码" required> 
+					<input id="username" type="text" name="Email" placeholder="  你的用户名" required>
+					<input id="password" type="password" name="Password" placeholder="  输入密码" required> 
 				</div>
-            <input id="submit" type="submit" id="submit" value="Log in">
+            <input id="submit" type="submit" id="submit" value="登陆">
             <label id="keepme"><input type="checkbox" checked="checked">记住登录信息</label>                       
             </form>
         </div>

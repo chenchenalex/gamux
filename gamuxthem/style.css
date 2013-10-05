@@ -91,38 +91,44 @@ header{
     left: 0px;
     top: 40px;
 }
-
+/**************************登陆框*****************************/
 #toplogin{
-	width: 275px;
+	position:relative;
+	width: 180px;
 	float: right;
-	margin-top: 60px;
+	margin-top: 40px;
 }
 
 #toplogin a{
-    color: #FFFFFF;
-	
+    color: #FFFFFF;	
     font-size: 18px;
     list-style-type: none;
 }
-
-#toplogin-content{
-	width: 500px;
+#toplogin  {
+	border: 1px solid;
 }
+#submit {
+	float:left;
+}
+#keepme {
+	float:left;
+	margin-top:5px;
+	margin-left:10px;
+	}
+
+
+
+
+
 .head {
 height: 124px;
 overflow: hidden;
 position: relative;
-width: 960px;
+width:90%;
 margin: 0 auto;
 }
 
-#toplogininput{
-    background: whitesmoke;
-    float: right;
 
-
-    width: 40px;
-}
 
 
 #navbar h1 a{
@@ -201,7 +207,7 @@ background-position: 0px 120px;
 }
 
 #slide{
-	border: 1px black dashed;
+	border: 1px black;
 	width:740px;
 	height:220px;
 	position: relative;

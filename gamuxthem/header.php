@@ -47,23 +47,16 @@
 			
 		</ul>
 
-	<li id="toplogin">
-                <a id="login-trigger" href="#">
-                    Log in <span>▼</span>
-                </a>
-                <div id="toplogin-content">
-                    <form>
-                        <fieldset id="toplogininput">
-                            <input id="username" type="text" name="Email" placeholder="你的用户名" required>
-                            <input id="password" type="password" name="Password" placeholder="输入密码" required>
-                        </fieldset>
-                        <fieldset id="toploginaction">
-                            <input type="submit" id="submit" value="Log in">
-                            <label><input type="checkbox" checked="checked"> Keep me signed in</label>
-                        </fieldset>
-                    </form>
-                </div>
-            </li>
+		<div id="toplogin">
+            <form>
+				<div>
+					<input id="username" type="text" name="Email" placeholder="你的用户名" required>
+					<input id="password" type="password" name="Password" placeholder="输入密码" required> 
+				</div>
+            <input id="submit" type="submit" id="submit" value="Log in">
+            <label id="keepme"><input type="checkbox" checked="checked">记住登录信息</label>                       
+            </form>
+        </div>
 	</div>
 </div>
 

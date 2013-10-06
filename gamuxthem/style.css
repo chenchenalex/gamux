@@ -379,6 +379,9 @@ background: #393939;
 }
 
 .gnulinux{
-	float:right;
-	margin-right:100px;
+	float: right;
+	margin-right: 100px;
+	width: 150px;
+	height: 100px;
+	overflow: hidden;
 }

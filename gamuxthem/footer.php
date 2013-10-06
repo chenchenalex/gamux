@@ -18,8 +18,8 @@
                 <li><span><a>本站主题</a></span></li>
               </ul>
             </div><!-- col2 -->    
-            <div class="gnulinux">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/gnulinux.jpg" />
+            <div class="gnulinux"></div>
+      
             </div>                    
             <div class="description">            
               <p>Linux游戏下载站&mdash;为Linux用户的娱乐性而奋斗！&mdash;非盈利&mdash;标准大陆中文</p>

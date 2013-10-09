@@ -3,6 +3,16 @@
 
 <div class="main">
 	  <div id="slide">
+
+	  <div id="focus">
+		<ul>
+			<li><a href="http://lab.gamux.org/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/01.jpg" alt="QQ商城焦点图效果下载" /></a></li>
+			<li><a href="http://lab.gamux.org/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/02.jpg" alt="QQ商城焦点图效果教程" /></a></li>
+			<li><a href="http://lab.gamux.org/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/03.jpg" alt="jquery商城焦点图效果" /></a></li>			
+		</ul>
+	  <?php echo gamux_indexlunbo_jquery(); ?>
+
+	</div>
 	  </div>
 	  <div class="recbox">
 		<div class="tit">热门游戏

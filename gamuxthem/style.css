@@ -13,20 +13,30 @@ License URI: http://www.gnu.org/licenses/gpl.html
 */
 /* ---------------------------------------------------------- */
 
-* {
-	font-family: Arial, sans-serif;
-	font-size:15px;
-}
+
 html{
    margin-left:-10px;
 }
 
 body {
 	font-family: Arial,sans-serif;
-	font-size: 15px;
+	font-size: 14px;
 	width:100%;
 	background: #f6f6f6;
 }
+
+body, ul, form, h1, h2, h3, h4, h5, h6, p {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+.wrap {
+width: 960px;
+margin: 0 auto;
+background: #efefef;
+}
+
 img {
 	border: none;
 }
@@ -83,7 +93,7 @@ margin-right: 30px;
 #toplogin{
 	width: 280px;
 	float: right;
-	padding-top: 20px;
+	padding-top: 50px;
 	height:100px;
 	margin-right: 50px;
 }
@@ -92,6 +102,7 @@ margin-right: 30px;
 	border-radius: 5px;
 	margin-bottom: 5px;
 	box-shadow: 0px 0px 5px;
+	font-size:12px;
 }
 
 #username{
@@ -147,7 +158,7 @@ height: 70px;
 overflow: hidden;
 text-indent: -999em;
 background: url("images/logo.jpg") repeat scroll center 0px transparent;
-margin: 30px 0px 0px 50px;
+margin: 35px 0px 0px 50px;
 }
 
 .menu li{
@@ -159,7 +170,7 @@ margin: 30px 0px 0px 50px;
 	display: inline-block;
 	float: left;
 	
-	margin: 40px 20px;
+	margin: 55px 20px;
 }
 
 .page-item-5{
@@ -184,6 +195,7 @@ margin: 30px 0px 0px 50px;
 	padding: 2px 0 0 40px;
 	text-decoration: none;
 	font-weight:bold;
+	font-size:14px;
 }
 .dropdown-menu {
 	width: 275px;
@@ -222,7 +234,7 @@ margin: 30px 0px 0px 50px;
 }
 
 .main{
-	padding: 19px 19px 16px 0;
+	padding: 19px 19px 68px 0;
 	float: left;
 	border-right: 1px solid #c9c9c9;
 	width: 740px;
@@ -242,11 +254,31 @@ margin: 30px 0px 0px 50px;
 	margin-bottom: 16px;
 }
 
+.breadcrumb, .breadcrumb a {
+color: #868686;
+}
+
+.breadcrumb a:hover {
+text-decoration: none;
+color: #ff8800;
+}
+
+.breadcrumb {
+font-size: 12px;
+padding: 0 10px 12px 10px;
+line-height: 15px;
+}
+
 .tit {
 padding: 12px 10px 8px;
 border-bottom: 2px solid #ddd;
 font-weight: bold;
 height: 10px;
+}
+
+
+.tit h1 {
+font-size: 14px;
 }
 
 .tit a {
@@ -262,14 +294,52 @@ font-size: 12px;
 line-height: 19px;
 width:740px;
 height:339px;
-border:1px black dashed;
+
+}
+
+.appintro {
+margin-top: 20px;
+padding-bottom: 21px;
+}
+
+.appintro .left {
+float: left;
+width: 153px;
+height:192px;
+line-height: 1;
+text-align: center;
+border-right: 1px solid #e9e9e9;
+}
+
+.appintro .right {
+overflow: hidden;
+font-size: 12px;
+padding-left: 30px;
+}
+.right .appinfo {
+margin-bottom: 12px;
+}
+.appinfo h3 {
+font-size: 12px;
+}
+
+.appinfo p {
+color: #999999;
+margin-top: 3px;
+padding-right: 12px;
+height: 40px;
+overflow: hidden;
+line-height: 20px;
+}
+
+.detail-pic {
+padding: 10px;
 }
 
 .recomend-cen {
 	margin: 0 0 22px -12px;
 	width:752px;
 	height:92px;
-	border:1px black dashed;
 }
 
 .recomend-cen a{
@@ -361,6 +431,20 @@ line-height: 19px;
 #toplist{
 	width:182px;
 }
+
+.baseinfo {
+margin-bottom: 12px;
+font-size: 12px;
+width: 172px;
+line-height: 23px;
+padding: 6px 0 0 10px;
+}
+
+.sidebar-right {
+width: 182px;
+float: right;
+padding: 19px 9px 8px 9px;
+}
 /* footer
 -------------------------------------------------------------- */
 
@@ -376,6 +460,7 @@ background: #393939;
     display: inline-block;
 	
     float: left;
+    margin-left: 40px;
 }
 
 .gnulinux{
@@ -384,4 +469,10 @@ background: #393939;
 	width: 150px;
 	height: 100px;
 	overflow: hidden;
+}
+
+.description{
+  font-size: 14px;
+line-height: 35px;
+  
 }

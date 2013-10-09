@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
   
-	<div class="main">
+<div class="main">
 	  <div class="breadcrumb">
 	    <a href="/">首页</a> <span class="divider"> &gt;</span>
 	    精品推荐
@@ -11,8 +11,8 @@
 	  <ul class="applist app-push clearfix">
 <!-- 	  插入应用内容 -->
 	   </ul>
-      </div>
-      
+     	 </div>
+</div>
       
       <!-- main end -->
   <!-- right sidebar begin -->

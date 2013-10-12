@@ -30,7 +30,7 @@
 		</div><!-- siteinfo -->
       </div>
 
-    </div> <!-- /container -->
+   
 
     <?php wp_footer(); ?>
 	<!-- Le javascript

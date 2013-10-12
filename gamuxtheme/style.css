@@ -326,6 +326,48 @@ text-align: center;
 border-right: 1px solid #e9e9e9;
 }
 
+.downarea{
+    width: 100%;
+  
+  
+    height: 150px;
+    overflow: hidden;
+}
+
+.downarea a{
+    width: 170px;
+  
+  
+    height: 50px;
+    float: left;
+    background: url("images/download.png") no-repeat;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+#deb32{
+    background-position: 0px 0px;
+  
+}
+
+#deb64{
+    background-position: 0px -49px;
+  
+}
+
+#rpm32{
+    background-position: 0px -99px;
+  
+}
+
+#rpm64{
+    background-position: 0px -149px;
+  
+}
+
+#tar32{
+    background-position: 0px -198px;
+  
+}
 .appintro .right {
 overflow: hidden;
 font-size: 12px;
@@ -490,4 +532,3 @@ background: #393939;
   font-size: 14px;
 line-height: 35px;
   
-}

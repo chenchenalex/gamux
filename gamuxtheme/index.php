@@ -57,6 +57,7 @@
 	<?php get_sidebar(); ?>
 <!-- sidebar end -->
 </div>
+ </div> <!-- /container -->
 <!-- footer begin -->
 	<?php get_footer(); ?> 
 <!-- footer end -->

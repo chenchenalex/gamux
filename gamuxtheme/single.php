@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<div class="wrap clearfix">
 <div class="main">
     <div class="breadcrumb">
         <a href="/">首页</a> <span class="divider"> &gt; </span>
@@ -32,7 +31,13 @@
             
             </p>
           </div>
-        
+         <div class ="downarea">
+            <a id="deb32"></a>
+            <a id="deb64"></a>
+            <a id="rpm32"></a>
+            <a id="rpm64"></a>
+            <a  id="tar32"></a>
+            </div>
       </div>
     </div>
     <div class="detail-pic">
@@ -64,5 +69,5 @@
     </ul>
 </div>
 
-
+</div>
 <?php get_footer(); ?> 

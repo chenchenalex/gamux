@@ -95,7 +95,6 @@ margin-right: 30px;
 	float: right;
 	padding-top: 35px;
 	height:100px;
-	margin-right: 120px;
 }
 
 #username,#password{
@@ -143,7 +142,7 @@ margin-right: 30px;
 .head {
 height: 124px;
 overflow: hidden;
-width:90%;
+width: 70%;
 margin: 0 auto;
 }
 
@@ -158,7 +157,7 @@ height: 70px;
 overflow: hidden;
 text-indent: -999em;
 background: url("images/logo.jpg") repeat scroll center 0px transparent;
-margin: 35px 20px 0px 120px;
+margin: 35px 20px 0px 0px;
 }
 
 .menu li{
@@ -173,13 +172,13 @@ margin: 35px 20px 0px 120px;
 	margin: 55px 20px;
 }
 
-.page-item-5{
+.menu-item-14{
     background: url("images/cat0.jpg") no-repeat; 
     background-position: 1px -4px;
 
 }
 
-.page-item-2{
+.menu-item-31{
     background: url("images/cat1.jpg") no-repeat;
     
     background-position: 3px -5px;
@@ -532,3 +531,4 @@ background: #393939;
   font-size: 14px;
 line-height: 35px;
   
+ 

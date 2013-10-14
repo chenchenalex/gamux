@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 <div class="main">
     <div class="breadcrumb">
-        <a href="/">首页</a> <span class="divider"> &gt; </span>
-        <a href="/game/">游戏</a>
-        <span class="divider"> &gt; </span>游戏名称
+        <a href="<?php bloginfo(url); ?>">首页</a> <span class="divider"> &gt; </span>
+        <a href="/game/"><?php if (the_category(', '))  the_category(); ?></a>
+        <span class="divider"> &gt; </span><?php the_title(); ?>
     </div>
-    <div class="tit"><h1>游戏名称</h1></div>
+    <div class="tit"><h1><?php the_title(); ?></h1></div>
     <div class="appintro clearfix">
       <div class="left">
         <div class="img">
@@ -18,19 +18,13 @@
           <h3>应用介绍</h3>
 
           <p class="pslide">    
-          <!--           游戏信息1 -->
-          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxx
+			<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
+			<?php the_content(); ?>
+			<?php endwhile; ?>
+			<?php endif; ?>
           </p>
         </div>
         
-          <div class="appinfo">
-            <h3>其他信息</h3>
-            <p class="pslide">
-            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-            <!-- 	      游戏信息2 -->
-            
-            </p>
-          </div>
          <div class ="downarea">
             <a id="deb32"></a>
             <a id="deb64"></a>
@@ -59,12 +53,12 @@
 </div>
     <div class="tit">基本信息</div>
     <ul class="baseinfo">
-      <li><span>分类：</span><h4>游戏</h4></li>
-      <li><span>版本号：</span><h4 class="baseinfo-vname" title="1.1.0">1.1.0</h4></li>
-      <li><span>更新时间：</span><h4>2013-09-25</h4></li>
-      <li><span>包名：</span><h4 class="baseinfo-developer" title="com.dragonstudio.dotababy.mi">com.dragonstudio.dotababy.mi</h4></li>
-      <li><span>软件大小：</span><h4>93.58 M</h4></li>
-      <li><span>开发商：</span><h4 class="baseinfo-developer" title="北京游龙腾信息技术有限公司">北京游龙腾信息技术有限公司</h4></li>
+      <li><span>游戏名：</span><h4 class="baseinfo-developer" title="com.dragonstudio.dotababy.mi"><?php the_title(); ?></h4></li>
+      <li><span>分类：</span><h4><?php the_category(); ?></h4></li>
+      <li><span>版本号：</span><h4 class="baseinfo-vname" title="1.1.0">参看游戏包名</h4></li>
+      <li><span>更新时间：</span><h4><?php the_time('Y-m-d'); ?></h4></li>
+<!-----      <li><span>软件大小：</span><h4>93.58 M</h4></li>		--->
+      <li><span>开发商：</span><h4 class="baseinfo-developer" title="北京游龙腾信息技术有限公司">见游戏简介</h4></li>
       
     </ul>
 </div>

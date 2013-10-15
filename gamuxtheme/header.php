@@ -22,7 +22,7 @@
     
     <!-- Le styles -->
     <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
-    <?php wp_enqueue_script('jquery'); ?>
+	<script src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
     <?php wp_head(); ?>
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo get_bloginfo('rss2_url'); ?>" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="<?php bloginfo('comments_rss2_url'); ?>" />

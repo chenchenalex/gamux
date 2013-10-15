@@ -1,15 +1,5 @@
 <?php 
 
-function gamux_indexlunbo_jquery()
-{
-	// Register the script like this for a theme:
-	wp_register_script( 'custom-script', get_template_directory_uri() . '/js/indexlunbo.jquery.js', array( 'jquery' ) );
-	// For either a plugin or a theme, you can then enqueue the script:
-	wp_enqueue_script( 'custom-script' );
-}
-add_action( 'wp_enqueue_scripts', 'gamux_indexlunbo_jquery' );
-
-
 
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
@@ -28,6 +18,31 @@ if(function_exists('register_nav_menus')){
                 //footer-menu=>__( '页面底部自定义菜单' ),
     )
     );
+}
+
+//添加缩略图功能
+if ( function_exists( 'add_theme_support' ) ) {
+	add_theme_support( 'post-thumbnails' );
+}
+//得到缩略图,形式为http://..../xxx.【图片格式】
+function nosrc_post_thumbnail() {
+	if ( has_post_thumbnail() )
+		$img_id=get_post_thumbnail_id();
+		$img_url=wp_get_attachment_image_src($img_id);
+		$img_url=$img_url[0];
+		echo $img_url;
+	}
+
+//[页面/分类]别名获取链接
+function geturl($slug, $type="page") { //slug
+global $wpdb;
+if ($type == "page") {
+$url_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_name = '".$slug."'");
+echo get_permalink($url_id);
+}else {
+$url_id = $wpdb->get_var("SELECT term_id FROM $wpdb->terms WHERE slug = '".$slug."'");
+echo get_category_link($url_id);
+}
 }
 
 ?>

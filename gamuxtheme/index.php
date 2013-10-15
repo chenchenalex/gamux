@@ -10,13 +10,27 @@
 			<li><a href="http://lab.gamux.org/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/02.jpg" alt="QQ商城焦点图效果教程" /></a></li>
 			<li><a href="http://lab.gamux.org/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/03.jpg" alt="jquery商城焦点图效果" /></a></li>			
 		</ul>
-	  <?php echo gamux_indexlunbo_jquery(); ?>
+	  <script src="<?php bloginfo('template_directory'); ?>/js/indexlunbo.jquery.js" ></script>
 
 	</div>
 	  </div>
 	  <div class="recbox">
 		<div class="tit">热门游戏
 			<a href="/allFeaturedList">查看全部&gt;</a>
+<!--------------------Hot Games List-------------------------->
+最新文章:
+<ul>
+<?php $post_query = new WP_Query(‘showposts=10′);
+while ($post_query->have_posts()) : $post_query->the_post();
+$do_not_duplicate = $post->ID; ?>
+<li><a href=”<?php the_permalink(); ?>”><?php the_title(); ?></a></li>
+<?php endwhile;?>
+</ul>			
+			
+			
+			
+			
+<!-------------------------HOT GAMES LIST END----------------------------->			
 		</div>
 		<ul class="applist app-push clearfix">
 		</ul>

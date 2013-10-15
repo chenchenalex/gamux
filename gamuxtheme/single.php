@@ -17,12 +17,12 @@
         <div class="appinfo">
           <h3>应用介绍</h3>
 
-          <p class="pslide">    
+          <div class="pslide">    
 			<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 			<?php the_content(); ?>
 			<?php endwhile; ?>
 			<?php endif; ?>
-          </p>
+          </div>
         </div>
         
          <div class ="downarea">
@@ -55,6 +55,7 @@
     <ul class="baseinfo">
       <li><span>游戏名：</span><h4 class="baseinfo-developer" title="com.dragonstudio.dotababy.mi"><?php the_title(); ?></h4></li>
       <li><span>分类：</span><h4><?php the_category(); ?></h4></li>
+	  <li><span>其他分类</span><h4><?php get_tags( $tag, $output = 'OBJECT', $filter = 'raw' ); ?></h4></li>
       <li><span>版本号：</span><h4 class="baseinfo-vname" title="1.1.0">参看游戏包名</h4></li>
       <li><span>更新时间：</span><h4><?php the_time('Y-m-d'); ?></h4></li>
 <!-----      <li><span>软件大小：</span><h4>93.58 M</h4></li>		--->

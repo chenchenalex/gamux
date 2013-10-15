@@ -224,6 +224,15 @@ margin: 35px 20px 0px 0px;
 /*loginform
 ------------------------------------------------------------- */
 
+
+/*--------------------------Clientgame Page--------------------------*/
+.clientgame {
+	background:url(images/clientgame_bg.gif) repeat-x repeat-y;
+}
+
+
+
+
 /*index,page,home etc.
 ------------------------------------------------------------- */
 #contentarea {

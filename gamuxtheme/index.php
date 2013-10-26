@@ -6,42 +6,210 @@
 
 	  <div id="focus">
 		<ul>
-			<li><a href="http://lab.gamux.org/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/01.jpg" alt="QQ商城焦点图效果下载" /></a></li>
-			<li><a href="http://lab.gamux.org/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/02.jpg" alt="QQ商城焦点图效果教程" /></a></li>
-			<li><a href="http://lab.gamux.org/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/03.jpg" alt="jquery商城焦点图效果" /></a></li>			
+		<?php $posts = get_posts( "category=8&numberposts=5" ); ?>
+			<?php if( $posts ) : ?>
+			<?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
+				<?php 
+				$szPostContent = $post->post_content; 
+				$szSearchPattern = '~<img [^\>]*\ />~';  // 搜索所有符合的图片 
+				preg_match_all( $szSearchPattern, $szPostContent, $aPics ); 
+				$iNumberOfPics = count($aPics[0]); // 检查一下至少有一张图片
+				?>
+
+    				<?php if ( $iNumberOfPics > 0 ) { ?>
+				<li><a href="<?php the_permalink(); ?>" target="_blank"><img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>" /></a></li>
+    				<?php } else; ?> 
+				<div style="display:none;"></div>
+					<?php endforeach; ?>			
+					<?php endif; ?>
 		</ul>
 	  <script src="<?php bloginfo('template_directory'); ?>/js/indexlunbo.jquery.js" ></script>
 
 	</div>
 	  </div>
+ <div class="recbox">
+		<div class="tit">游戏新闻
+			<a  href="/allFeaturedList">查看全部&gt;</a>
+		</div>
+<!-------------------------------头条新闻，置顶----------------------------------->
+		<a class="headline">
+		<?php
+               $sticky = get_option('sticky_posts');
+               rsort( $sticky );
+               $sticky = array_slice( $sticky, 0, 1);
+               query_posts( array( 'post__in' => $sticky, 'ignore_sticky_posts' => 1,'showposts' => 1,'cat' =>8) );
+               ?>
+               <?php if (have_posts()) : ?>
+               <?php while (have_posts()) : the_post(); ?>
+	       <a href="<?php the_permalink(); ?>" target="_blank"><h2>[头条]<?php the_title(); ?></h2></a>
+               <?php endwhile; ?>
+               <?php else : ?><p class="center">没有数据。</p>
+               <?php endif; ?>
+		
+		</a>
+		<ul class="newslist  clearfix">
+<!-----------------------------------本站新闻--------------------------------------->
+		<div class = "lnews">
+		<h5>本站新闻</h5>
+		<?php $posts = get_posts( "category=9&numberposts=8" ); ?>
+			<?php if( $posts ) : ?>
+			<?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
+				<li><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a></li>
+	
+
+					<?php endforeach; ?>			
+					<?php endif; ?>
+
+		</div>
+<!----------------------------------行业新闻--------------------------------------->
+		<div class = "rnews">
+		<h5>行业新闻</h5>
+			<?php $posts = get_posts( "category=10&numberposts=8" ); ?>
+			<?php if( $posts ) : ?>
+			<?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
+				<li><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a></li>
+	
+
+					<?php endforeach; ?>			
+					<?php endif; ?>
+		</div>
+		</ul>
+</div>
 	  <div class="recbox">
 		<div class="tit">热门游戏
-			<a href="/allFeaturedList">查看全部&gt;</a>
-<!--------------------Hot Games List-------------------------->
-最新文章:
-<ul>
-<?php $post_query = new WP_Query(‘showposts=10′);
-while ($post_query->have_posts()) : $post_query->the_post();
-$do_not_duplicate = $post->ID; ?>
-<li><a href=”<?php the_permalink(); ?>”><?php the_title(); ?></a></li>
-<?php endwhile;?>
-</ul>			
-			
-			
-			
-			
-<!-------------------------HOT GAMES LIST END----------------------------->			
+			<a  href="/allFeaturedList">查看全部&gt;</a>
+		
+		
 		</div>
 		<ul class="applist app-push clearfix">
+<!--------------------Hot Games List-------------------------->
+<li class="clearfix">
+    <a class="applist-img" href="/detail/13763">
+      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
+
+src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
+
+">
+    </a>
+    <div class="app-des">
+      <h6><a href="/detail/13763">汽车报价大全</a></h6>
+      <p>实用工具</p>
+    </div>
+</li>
+
+<li class="clearfix">
+    <a class="applist-img" href="/detail/9180">
+      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/73bd4b6a-5344-4acd-8c19-88fd2a4f048b" src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/73bd4b6a-5344-4acd-8c19-88fd2a4f048b" alt="百度音乐播放器">
+    </a>
+    <div class="app-des">
+      <h6><a href="/detail/9180">百度音乐播放器</a></h6>
+      <p>影音视听</p>
+    </div>
+</li>
+
+<li class="clearfix">
+    <a class="applist-img" href="/detail/13763">
+      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
+
+src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
+
+">
+    </a>
+    <div class="app-des">
+      <h6><a href="/detail/13763">汽车报价大全</a></h6>
+      <p>实用工具</p>
+    </div>
+</li>
+
+<li class="clearfix">
+    <a class="applist-img" href="/detail/13763">
+      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
+
+src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
+
+">
+    </a>
+    <div class="app-des">
+      <h6><a href="/detail/13763">汽车报价大全</a></h6>
+      <p>实用工具</p>
+    </div>
+</li>
+
+<li class="clearfix">
+    <a class="applist-img" href="/detail/13763">
+      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
+
+src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
+
+">
+    </a>
+    <div class="app-des">
+      <h6><a href="/detail/13763">汽车报价大全</a></h6>
+      <p>实用工具</p>
+    </div>
+</li>
+
+<!-----------------------热评文章---------------------------->
+<ul>
+<?php
+$post_num = 10; // 设置调用条数
+$args = array(
+'post_password' => '',
+'post_status' => 'publish', // 只选公开的文章.
+'category__not_in' => array(8),
+'post__not_in' => array($post->ID),//排除当前文章
+'caller_get_posts' => 1, // 排除置頂文章.
+'orderby' => 'comment_count', // 依評論數排序.
+'posts_per_page' => $post_num
+);
+$query_posts = new WP_Query();
+$query_posts->query($args);
+while( $query_posts->have_posts() ) { $query_posts->the_post(); ?>
+<li><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
+<?php } wp_reset_query();?>
+</ul>
+		
+		
+					
+			
+<!-------------------------HOT GAMES LIST END----------------------------->	
 		</ul>
 	  </div>
 	  <div class="recomend-cen">
 	  </div>
 	  <div class="recbox">
 		<div class="tit">最新游戏
-			<a href="/allFeaturedList">查看全部&gt;</a>
+			<a   href="/allFeaturedList">查看全部&gt;</a>
 		</div>
 		<ul class="applist app-push clearfix">
+		<li class="clearfix">
+ 	   <a class="applist-img" href="/detail/13763">
+      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
+
+src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
+
+">
+    </a>
+    <div class="app-des">
+      <h6><a href="/detail/13763">汽车报价大全</a></h6>
+      <p>实用工具</p>
+    </div>
+	</li>
+
+	<li class="clearfix">
+    <a class="applist-img" href="/detail/13763">
+      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
+
+src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
+
+">
+    </a>
+    <div class="app-des">
+      <h6><a href="/detail/13763">汽车报价大全</a></h6>
+      <p>实用工具</p>
+    </div>
+</li>
+
 	  </div>
 	  <section id="content" class="row">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

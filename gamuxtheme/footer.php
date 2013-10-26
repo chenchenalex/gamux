@@ -1,5 +1,5 @@
     <hr/>
-      <div class="site-footer row" role="contentinfo">
+      <footer class="site-footer row" role="contentinfo">
         <div class="container-fluid siteinfo">
 		  <div class="row-fluid colfooter">
             <div class="footer_row">
@@ -27,12 +27,13 @@
               <p>Powered by WordPress <?php bloginfo('version'); ?> and Bootstrap 3.0</p>
             </div>            
           </div>
-		</div><!-- siteinfo -->
+		</footer><!-- siteinfo -->
       </div>
 
    
 
     <?php wp_footer(); ?>
-
+	<!-- Le javascript
+    ================================================== -->
   </body>
 </html>

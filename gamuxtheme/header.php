@@ -26,11 +26,12 @@
     <?php wp_head(); ?>
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo get_bloginfo('rss2_url'); ?>" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="<?php bloginfo('comments_rss2_url'); ?>" />
+    <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon2.ico" />
 
 </head>
 
 <body <?php body_class(); ?>>
-<div id="navbar">
+<header id="navbar">
 	<div class="head">
   	
   		<h1>
@@ -58,7 +59,7 @@
             </form>
         </div>
 	</div>
-</div>
+</header>
 
 
   <div id="contentarea" class="container clearfix">

@@ -1,4 +1,4 @@
-    <hr/>
+   </div>
       <footer class="site-footer row" role="contentinfo">
         <div class="container-fluid siteinfo">
 		  <div class="row-fluid colfooter">

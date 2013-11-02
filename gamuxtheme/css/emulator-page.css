@@ -1,0 +1,219 @@
+#ubuntucontainer {
+background-color: black;
+background: url(../img/background.jpg) no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+font-family: "Ubuntu","Ubuntu Beta",Ubuntu, UbuntuBeta !important;
+color: white;
+overflow: hidden;
+overflow-x: hidden;
+width: 100%;
+height: 650px;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+
+}
+
+#top {
+background-image: url(../img/top-bg.jpg);
+background-repeat: repeat-x;
+height: 24px;
+color: #DFDBD2;
+z-index: 9;
+}
+
+#top #top-left {
+float: left;
+}
+
+#top #top-left #dash-control-buttons {
+float: left;
+}
+
+#control-buttons {
+margin-top: 2px;
+margin-left: 8px;
+float: left;
+display: none;
+}
+
+#top-left #title {
+font-weight: bold;
+float: left;
+color: #DFDBD2;
+font-size: 14px;
+margin-left: 10px;
+margin-top: 2px;
+}
+
+#top #top-right {
+float: right;
+font-size: 15px;
+}
+
+
+#top #top-right #connection, #top #top-right #speakers, #top #top-right #bluetooth, #top #top-right #message {
+padding-top: 4px;
+}
+
+#top #top-right #time, #top #top-right #user {
+padding-top: 3px;
+}
+
+#top #top-right #power {
+padding-top: 2px;
+}
+
+#top #top-right div {
+float: left;
+padding: 0px 8px;
+overflow: hidden;
+}
+
+
+#umenu {
+background: #500D28;
+width: 70px;
+border-right: 1px solid #6e3a4d;
+z-index: 10;
+overflow: hidden;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+
+}
+
+#umenu ul {
+margin-top: 6px;
+padding-left: 12px;
+height: 100%;
+}
+
+#umenu .scroll-up {
+position: absolute;
+left: 0px;
+top: 0px;
+width: 100%;
+height: 20px;
+}
+
+#umenu .scroll-down {
+position: absolute;
+left: 0px;
+bottom: 0px;
+width: 100%;
+height: 20px;
+}
+
+#umenu ul li span {
+display: none;
+}
+
+#umenu .dash {
+background-image: url(../img/menu/icon-dash.png);
+}
+
+#umenu ul li {
+list-style: none;
+height: 46px;
+width: 52px;
+color: transparent;
+padding-top: 6px;
+margin-bottom: 6px;
+background-repeat: no-repeat;
+-moz-transition: -moz-box-shadow .3s linear;
+-webkit-transition: -webkit-box-shadow .3s linear;
+transition: box-shadow .3s linear;
+}
+
+#umenu ul li img.selected-window-arrow {
+display: none;
+float: right;
+margin-right: -6px;
+margin-top: 17px;
+position: relative;
+}
+
+#umenu .home {
+background-image: url(../img/menu/icon-folder.png);
+}
+
+#umenu .firefox {
+background-image: url(../img/menu/icon-firefox.png);
+}
+
+#umenu .software {
+background-image: url(../img/menu/icon-software.png);
+}
+
+#umenu .writer {
+background-image: url(../img/menu/icon-writer.png);
+}
+
+#top #top-right div .drop-down {
+list-style-type: none;
+background: #464641;
+padding: 0px 5px;
+margin-top: 0px;
+-moz-box-shadow: -1px 1px 5px #000000;
+-webkit-box-shadow: -1px 1px 5px #000000;
+box-shadow: -1px 1px 5px #000000;
+position: absolute;
+display: none;
+z-index: 10;
+}
+
+#top #top-right #message .drop-down {
+margin-left: -45px;
+margin-top: 3px;
+width: 240px;
+}
+
+#top #top-right #bluetooth .drop-down {
+width: 208px;
+margin-left: -45px;
+}
+
+#top #top-right #connection .drop-down {
+width: 219px;
+margin-left: -75px;
+}
+
+#top #top-right #speakers .drop-down {
+width: 255px;
+margin-left: -152px;
+}
+
+#top #top-right #time .drop-down {
+width: 300px;
+margin-left: -233px;
+margin-top: 3px;
+}
+
+#top #top-right #power .drop-down {
+margin-left: -232px;
+width: 247px;
+}
+
+#top #top-right #time p {
+margin: 0px;
+}
+
+#umenu ul li img.open-arrow {
+margin-left: -7px;
+margin-top: 17px;
+display: none;
+}
+
+#umenu ul li img.selected-window-arrow {
+display: none;
+float: right;
+margin-right: -6px;
+margin-top: 17px;
+position: relative;
+}

@@ -18,7 +18,7 @@
           <h3>应用介绍</h3>
 
           <div class="pslide">    
-			<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
+			<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); setPostViews(get_the_ID()); ?>
 			<?php the_content(); ?>
 			<?php endwhile; ?>
 			<?php endif; ?>
@@ -34,6 +34,7 @@
             </div>
       </div>
     </div>
+    <?php comments_template(); ?>
     <div class="detail-pic">
 <!--       游戏截图幻灯 -->
     </div>

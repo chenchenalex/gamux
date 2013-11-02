@@ -296,7 +296,7 @@ height: 65px;
 line-height: 62px;
 padding: 1px;
 border: 1px solid #d8d8d8;
-background: url(http://resource.xiaomi.net/miuimarket/app/app-bg.png) #f5f5f5 1px 2px no-repeat;
+
 }
 
 .app-des a {
@@ -633,3 +633,57 @@ background: #393939;
 line-height: 35px;
  }
  
+
+
+#linuxnews h2{
+	font-size: 30px;
+	margin: 30px 0px 50px 20px;
+	color: #0085FF;
+	float: left;
+}
+#linuxnews .newstitle{
+	font-size: 18px;
+	float: left;
+	margin-right: 30px;
+	margin-left: 20px;
+}
+#linuxnews li{
+	display: inline-block;
+	width: 90%;
+	margin-left: 30px;
+	margin-top: 10px;
+	height: 100px;
+}
+#linuxnews .time{
+	float: right;
+	color: #979292;
+}
+
+.newstitle a:hover{
+	text-decoration:underline;
+	color: #0085FF;
+}
+.newspic{
+    float: left;
+    width: 150px;
+
+    height: 80px;
+    border: 1px solid;
+}
+
+#newslogo{
+	margin: 20px 10px 0px 50px;
+	float: left;
+	height: 60px;
+	width: 60px;
+	background: url("images/news.png") no-repeat;
+}
+
+.newspre{
+    height: 40px;
+
+    width: auto;
+    margin-top: 40px;
+    margin-left: 175px;
+    border: 1px solid;
+}

@@ -49,5 +49,5 @@ get_header(); ?>
 	     <script src="<?php bloginfo('template_directory'); ?>/js/jquery.quicksand.js"></script>
         <script src="<?php bloginfo('template_directory'); ?>/js/script.js"></script>
 
-</div>
+
 <?php get_footer(); ?>

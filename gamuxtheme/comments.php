@@ -1,4 +1,3 @@
-
 <?php
 if ( post_password_required() )
 	return;
@@ -7,8 +6,10 @@ if ( post_password_required() )
 <div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
+		<span class="comments-icon">
+		</span>
 		<h2 class="comments-title">
-			共<?php get_comments_number(); ?>条评论
+			共<?php $id=$post->ID; echo get_post($id)->comment_count;?>条评论
 		</h2>
 
 		<ol class="comment-list">
@@ -16,10 +17,12 @@ if ( post_password_required() )
 				wp_list_comments( array(
 					'style'       => 'ol',
 					'short_ping'  => true,
-					'avatar_size' => 74,
+					'avatar_size' => 32,
 				) );
 			?>
-		</ol><!-- .comment-list -->
+		</ol>
+
+	<!-- .comment-list -->
 
 		<?php
 			// Are there comments to navigate through?

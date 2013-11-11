@@ -27,7 +27,44 @@
 
 	</div>
 	  </div>
- <div class="recbox">
+ 
+	  <div class="recbox">
+		<div class="tit">热门游戏
+			<a  href="/allFeaturedList">查看全部&gt;</a>
+		
+		
+		</div>
+		<ul class="applist app-push clearfix">
+<!--------------------Hot Games List-------------------------->
+<?php
+/*<li class="clearfix">
+    <a class="applist-img" href="/detail/13763">
+      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
+
+src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
+
+">
+    </a>
+    <div class="app-des">
+      <h6><a href="/detail/13763">汽车报价大全</a></h6>
+      <p>实用工具</p>
+    </div>
+</li>*/
+//一个例子而已
+?>
+
+
+<!-----------------------热门文章函数---------------------------->
+  
+<?php echo ashu_get_hotpost(5); ?>
+		
+		
+					
+			
+<!-------------------------HOT GAMES LIST END----------------------------->	
+		</ul>
+	  </div>
+<div class="recbox">
 		<div class="tit">游戏新闻
 			<a  href="/allFeaturedList">查看全部&gt;</a>
 		</div>
@@ -75,91 +112,6 @@
 		</div>
 		</ul>
 </div>
-	  <div class="recbox">
-		<div class="tit">热门游戏
-			<a  href="/allFeaturedList">查看全部&gt;</a>
-		
-		
-		</div>
-		<ul class="applist app-push clearfix">
-<!--------------------Hot Games List-------------------------->
-<li class="clearfix">
-    <a class="applist-img" href="/detail/13763">
-      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
-
-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
-
-">
-    </a>
-    <div class="app-des">
-      <h6><a href="/detail/13763">汽车报价大全</a></h6>
-      <p>实用工具</p>
-    </div>
-</li>
-
-<li class="clearfix">
-    <a class="applist-img" href="/detail/9180">
-      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/73bd4b6a-5344-4acd-8c19-88fd2a4f048b" src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/73bd4b6a-5344-4acd-8c19-88fd2a4f048b" alt="百度音乐播放器">
-    </a>
-    <div class="app-des">
-      <h6><a href="/detail/9180">百度音乐播放器</a></h6>
-      <p>影音视听</p>
-    </div>
-</li>
-
-<li class="clearfix">
-    <a class="applist-img" href="/detail/13763">
-      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
-
-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
-
-">
-    </a>
-    <div class="app-des">
-      <h6><a href="/detail/13763">汽车报价大全</a></h6>
-      <p>实用工具</p>
-    </div>
-</li>
-
-<li class="clearfix">
-    <a class="applist-img" href="/detail/13763">
-      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
-
-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
-
-">
-    </a>
-    <div class="app-des">
-      <h6><a href="/detail/13763">汽车报价大全</a></h6>
-      <p>实用工具</p>
-    </div>
-</li>
-
-<li class="clearfix">
-    <a class="applist-img" href="/detail/13763">
-      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
-
-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
-
-">
-    </a>
-    <div class="app-des">
-      <h6><a href="/detail/13763">汽车报价大全</a></h6>
-      <p>实用工具</p>
-    </div>
-</li>
-
-<!-----------------------热评文章---------------------------->
-  
-<?php echo popularposts_with_comment(); ?>
-
-		
-		
-					
-			
-<!-------------------------HOT GAMES LIST END----------------------------->	
-		</ul>
-	  </div>
 	  <div class="recomend-cen">
 	  </div>
 	  <div class="recbox">
@@ -195,6 +147,32 @@ src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921
     </div>
 </li>
 
+<?php $posts = get_posts( "category=array(4,5)&numberposts=8" ); ?>
+			<?php if( $posts ) : ?>
+			<?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
+				<li class="clearfix">
+    <a class="applist-img" href="<?php the_permalink(); ?>">
+      <img data-src="<?php echo nosrc_post_thumbnail(); ?>" 
+
+src="<?php echo nosrc_post_thumbnail(); ?>" alt="<?php the_title(); ?>">
+    </a>
+    <div class="app-des">
+      <h6><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h6>
+      <p style="width:70px;overflow:hidden;">
+
+    <?php
+    foreach((get_the_category()) as $category) {
+    echo $category->cat_name  .' ';
+    }
+    ?>
+</p>
+    </div>
+</li>
+	
+
+					<?php endforeach; ?>			
+					<?php endif; ?>
+<!---------------------------------最新游戏结束------------------------------------->
 	  </div>
 	  <section id="content" class="row">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

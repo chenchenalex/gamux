@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 
 
 if ( function_exists('register_sidebar') )
@@ -22,13 +22,24 @@ if(function_exists('register_nav_menus')){
 
 //添加缩略图功能
 if ( function_exists( 'add_theme_support' ) ) {
-	add_theme_support( 'post-thumbnails', array( 'post' ) );
+	add_theme_support( 'post_thumbnails', array( 'post' ) );
 }
 set_post_thumbnail_size( 155, 110, true ); // 设置默认的缩略图大小尺寸
-add_image_size( 'one', 155, 110, true ); // 设置标记为”one”的缩略图尺寸，这里的one应该是数组下标
+add_image_size( 'one', 155, 110, true ); // 设置标记为"one"的缩略图尺寸，这里的one应该是数组下标
 add_image_size( 'two', 350, 248, true );
 add_image_size( 'big', 546, 387, true );
 
+//添加第二个缩略图
+require_once('lib/multi-post-thumbnails.php');
+if (class_exists('MultiPostThumbnails')) {
+  new MultiPostThumbnails(
+    array(
+     'label' => '第二个特色图片',
+     'id' => 'second-post-thumbnail',
+     'post_type' => 'post'
+     )
+  );
+}
 //得到缩略图,形式为http://..../xxx.【图片格式】
 function nosrc_post_thumbnail() {
 	if ( has_post_thumbnail() )
@@ -111,14 +122,27 @@ function setPostViews($postID) {
 /*-----------设置浏览次数结束--------------*/
 /*------------调用显示热门文章-------------*/
 
-    function ashu_get_hotpost(){
+    function ashu_get_hotpost($post_num=16){
     global $wpdb,$post;
- $result = $wpdb->get_results("SELECT post_content,post_id,meta_key,meta_value,ID,post_title FROM $wpdb->postmeta key1 INNER JOIN $wpdb->posts key2 ON key1.post_id = key2.ID where key2.post_type='post' AND key2.post_status='publish' AND key1.meta_key='post_views_count' ORDER BY CAST(key1.meta_value AS SIGNED) DESC LIMIT 0 , 6"); //查询文章 
+ 		$result = $wpdb->get_results("
+ 			SELECT post_content,post_id,meta_key,meta_value,ID,post_title 
+ 			FROM $wpdb->postmeta key1 
+ 			INNER JOIN $wpdb->posts key2 ON key1.post_id = key2.ID 
+ 			WHERE key2.post_type='post' 
+ 			AND key2.post_status='publish' 
+ 			AND key1.meta_key='post_views_count'
+
+ 			AND post_status = 'publish'
+ 			ORDER BY CAST(key1.meta_value AS SIGNED) DESC LIMIT 0 , $post_num");
     foreach ($result as $post) {
-    setup_postdata($post);
-    $postid = $post->ID;
-	$post_thumbnail = get_post_meta( $post_id, $key = '_thumbnail_id', $single = true );  
-    $output .= '<li class="clearfix">'.$post_thumbnail.'<a href="' . get_permalink($postid) . '" title="' . $post->post_title .'">' . get_the_title() .'</a></li>';
+    setup_postdata($post);  
+    $output .= '<li class="clearfix">
+    					<a class="applist-img" href="'.get_permalink().'">'.get_the_post_thumbnail().'</a>
+    					<div class="app-des">
+    					<h6><a href="'.get_permalink().'">'.get_the_title(). '
+    					</a></h6>
+    					<p>浏览次数:'.getPostViews(get_the_ID()).'
+    					</p></div></li>';
     }
 
     echo $output;
@@ -126,21 +150,25 @@ function setPostViews($postID) {
 /*----------------------------------------------------------------END-------------------------------------------------------------*/
 
 /*------------------------按评论设置热门文章----------------------*/
+function get_the_thumbnail($postmeta_post_id){
+	
+}
 function popularposts_with_comment($posts_num=10,$days=7,$display=ture) {
 	global $wpdb,$post;	
 	$output = '';      
     $most_comment = $wpdb->get_results("
-		SELECT ID , post_title , comment_count 
-		FROM $wpdb->posts 
+		SELECT ID , post_title , comment_count ,guid
+		FROM $wpdb->posts
 		WHERE post_type = 'post' AND TO_DAYS(now()) - TO_DAYS(post_date) < $days 
 		ORDER BY comment_count DESC LIMIT 0 , $posts_num ");
-    	
+
     	foreach ($most_comment as $post) {
     		$post_title = get_the_title();
+			//$post_title = $post->post_title;(也可以)
     		$post_views = getPostViews($postID);
-    		$output .= '<li>
-    					<a class="applist-img" href="'.get_permalink().'">'.get_the_post_thumbnail().'</a>'.
-    					'<div class="app-des">
+    		$output .= '<li class="clearfix">
+    					<a class="applist-img" href="'.get_permalink().'">'.get_the_thumbnail($postmeta_post_id).'</a>
+    					<div class="app-des">
     					<h6><a href="'.get_permalink().'">'.$post_title. '
     					</a></h6>
     					<p>浏览次数:'.getPostViews(get_the_ID()).'
@@ -148,5 +176,58 @@ function popularposts_with_comment($posts_num=10,$days=7,$display=ture) {
     	}
     	echo $output;
 }
+
+
+/*
+$termId:分类目录ID,为0时是检索所有分类目录
+$posts_num:显示热评文章的数量
+$days:检索多少天内的热评文章
+*/
+// 获得热评文章
+function simple_get_most_review($termId=0,$posts_num=10, $days=7)
+{
+global $wpdb;
+//所有热评文章
+if($termId==0){
+$sql = "SELECT 'ID' , 'post_title' , 'comment_count' FROM $wpdb->posts
+WHERE post_type = 'post'
+ORDER BY 'comment_count' DESC LIMIT 0 , $posts_num ";
+}
+//AND TO_DAYS(NOW()) - TO_DAYS(post_date) < $days
+//AND ('wp_posts'.'post_status' = 'publish' OR 'wp_posts'.'post_status' = 'inherit')     在上面计算天数的，但是有错误
+ 
+//分类热评文章
+else {
+$sql="SELECT 'ID' , 'post_title' , 'comment_count'  FROM 'wp_posts'
+INNER JOIN 'wp_term_relationships' ON 'wp_posts'.'ID' = 'wp_term_relationships'.'object_id'
+INNER JOIN 'wp_term_taxonomy' ON 'wp_term_relationships'.'term_taxonomy_id' =  'wp_term_taxonomy'.'term_taxonomy_id'
+WHERE 'wp_term_taxonomy'.'taxonomy' = 'category'
+AND 'wp_term_taxonomy'.'term_id' = $termId
+AND 'wp_posts'.'post_type' = 'post'
+GROUP BY 'wp_posts'.'ID'
+ORDER BY 'comment_count' DESC LIMIT 0 , 10  ";
+}
+$posts = $wpdb->get_results($sql);
+$output = "";
+foreach ($posts as $post){
+$title = $post->post_title;
+$output .= '<li class="clearfix">
+    					<a class="applist-img" href="'.get_permalink().'">'.get_the_post_thumbnail().'</a>
+    					<div class="app-des">
+    					<h6><a href="'.get_permalink().'">'.get_the_title(). '
+    					</a></h6>
+    					<p>浏览次数:'.getPostViews(get_the_ID()).'
+    					</p></div></li>';
+}
+echo $output;
+}
+
+/*调用方法：
+所有分类热评文章：
+<?php if (function_exists('simple_get_most_review')) {simple_get_most_review(0,10,31); }  ?>
+单个分类文章热评：
+<?php if (function_exists('simple_get_most_review')) {simple_get_most_review($category->term_id,10,31); }  ?>
+id换成分类id
+*/
 
 ?>

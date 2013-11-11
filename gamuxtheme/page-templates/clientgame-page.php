@@ -20,29 +20,20 @@ get_header(); ?>
 
         <section id="container">
         	<ul id="stage">
-            	<li data-tags="Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/1.jpg" alt="Illustration" /></li>
-                <li data-tags="Logo Design,Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/2.jpg" alt="Illustration" /></li>
-                <li data-tags="Web Design,Logo Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/3.jpg" alt="Illustration" /></li>
-                <li data-tags="Web Design,Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/4.jpg" alt="Illustration" /></li>
-                <li data-tags="Logo Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/5.jpg" alt="Illustration" /></li>
-                <li data-tags="Web Design,Logo Design,Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/6.jpg" alt="Illustration" /></li>
-                <li data-tags="Logo Design,Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/7.jpg" alt="Illustration" /></li>
-                <li data-tags="Web Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/8.jpg" alt="Illustration" /></li>
-                <li data-tags="Web Design,Logo Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/9.jpg" alt="Illustration" /></li>
-                <li data-tags="Web Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/10.jpg" alt="Illustration" /></li>
-                <li data-tags="Logo Design,Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/11.jpg" alt="Illustration" /></li>
-                <li data-tags="Logo Design,Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/12.jpg" alt="Illustration" /></li>
-                <li data-tags="Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/13.jpg" alt="Illustration" /></li>
-                <li data-tags="Web Design,Logo Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/14.jpg" alt="Illustration" /></li>
-                <li data-tags="Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/15.jpg" alt="Illustration" /></li>
-                <li data-tags="Logo Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/16.jpg" alt="Illustration" /></li>
-                <li data-tags="Web Design,Logo Design,Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/17.jpg" alt="Illustration" /></li>
-                <li data-tags="Web Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/18.jpg" alt="Illustration" /></li>
-                <li data-tags="Web Design,Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/19.jpg" alt="Illustration" /></li>
-                <li data-tags="Logo Design,Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/20.jpg" alt="Illustration" /></li>
-                <li data-tags="Web Design,Logo Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/21.jpg" alt="Illustration" /></li>
-                <li data-tags="Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/22.jpg" alt="Illustration" /></li>
-                <li data-tags="Logo Design,Print Design"><img src="<?php bloginfo('template_directory'); ?>/img/shots/23.jpg" alt="Illustration" /></li>
+           <li data-tags="aaa,aaab"><img src="<?php bloginfo('template_directory'); ?>/img/shots/21.jpg" alt="Illustration" /></li>
+ 	
+　　　<?php $posts = get_posts( "category=4&numberposts=8" ); ?>
+			<?php if( $posts ) : ?>
+			<?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
+			<li data-tags="<?php
+    foreach((get_the_category()) as $category) {
+    echo $category->cat_name  .' ,';
+    }
+    ?>"><img src="<?php bloginfo('template_directory'); ?>/img/shots/21.jpg" alt="Illustration" /></li>
+	
+
+					<?php endforeach; ?>			
+					<?php endif; ?>
             </ul>
         </section>
 		

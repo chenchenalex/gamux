@@ -68,7 +68,7 @@ a:hover{
 #filter a{
 	color: #FFFFFF;
 	display: inline-block;
-	height: 39px;
+	float:left;
 	line-height: 37px;
 	padding: 0 15px;
 	text-shadow:1px 1px 1px #315218;
@@ -84,6 +84,7 @@ a:hover{
 				-1px 0 0 rgba(255, 255, 255, 0.2),
 				1px 0 1px rgba(0,0,0,0.2) inset,
 				-1px 0 1px rgba(0,0,0,0.2) inset;
+	float:left;
 }
 
 

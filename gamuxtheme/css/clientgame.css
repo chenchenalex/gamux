@@ -34,7 +34,7 @@ a:hover{
 	height: 39px;
 	margin: 55px auto;
 	position: relative;
-	width: 600px;
+	max-width: 800px;
 	text-align:center;
 	
 	-moz-box-shadow:0 4px 4px #000;

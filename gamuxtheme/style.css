@@ -96,6 +96,7 @@ clear: both;
 	margin-bottom: 5px;
 	box-shadow: 0px 0px 5px;
 	font-size:12px;
+        width:175px;
 }
 
 #username{
@@ -104,19 +105,37 @@ clear: both;
 #password{
     background-position: 0px -245px;
 }
-#submit{
+#toplogin #submit{
     background-position: -3px -152px;
+}
+#toplogin span{
+    margin: 6px 0 0 6px;
+    float: left;
+}
+
+#toplogin li{
+    display:inline-block;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+#usernamelogged{
+    color: #FFFFFF;
+
+    margin-top: 10px;
+    font-size: 15px;
+    width: 120px;
+    background: none repeat scroll 0 0 #3C3C3C; border-radius: 4px 4px 4px 4px; 
+    box-shadow: 0 0 1px #aaa inset,0 1px 0 #7A7A7A; padding: 7px; position: relative;
 }
 
 #toplogin a{
     color: #FFFFFF;	
-    font-size: 18px;
     list-style-type: none;
 }
 
-#submit {
+#toplogin #submit {
 	float:left;
-	width: 115px;
+	width: 45px;
 	height: 21px;
 	border: none;
 	border-radius: 4px;
@@ -248,6 +267,7 @@ color: #FFFFFF;
 	width: 960px;
 	margin: 0 auto;
 	background: #efefef;;
+	padding-bottom: 20px;
 }
 
 .main{
@@ -292,7 +312,7 @@ vertical-align: middle;
 position: relative;
 float: left;
 width: 179px;
-padding-bottom: 36px;
+padding-bottom: 16px;
 }
 
 .applist-img {
@@ -359,18 +379,36 @@ padding: 0 10px 12px 10px;
 line-height: 15px;
 }
 
-.tit {
+.tit,.newstit {
 padding: 12px 10px 8px;
 border-bottom: 2px solid #ddd;
 font-weight: bold;
 height: 10px;
 }
 
+.newstit{
+	height:30px;
+	text-align: center;
+	padding-bottom: 20px;
+}
 
+.newscontent p{
+	font-size:15px;
+	line-height: 25px;
+	padding-top: 10px;
+}
+
+.newscontent img{
+    width: 650px;
+	
+    height: 200px;
+}
 .tit h1 {
 font-size: 14px;
 }
-
+.newstit h1 {
+font-size: 30px;
+}
 .tit a {
 margin-left: 20px;
 color: #868686;
@@ -408,7 +446,6 @@ font-weight: normal;
 padding: 22px 0 2px 10px;
 font-size: 12px;
 line-height: 19px;
-height: 420px;
 }
 
 .newslist{
@@ -432,48 +469,68 @@ line-height: 1;
 text-align: center;
 border-right: 1px solid #e9e9e9;
 }
-
-.downarea{
-    width: 100%;
-  
-  
-    height: 150px;
-    overflow: hidden;
+.left .img{
+    height:70px;
+    width:70px; 
+    margin-left:30px;
 }
 
-.downarea a{
-    width: 170px;
-  
-  
-    height: 50px;
+
+.downloadarea div{
     float: left;
     background: url("images/download.png") no-repeat;
     margin-right: 5px;
     margin-bottom: 10px;
 }
+
+.downloadarea a{
+	width:170px;
+	height: 48px;
+	display: inline-block;
+}
 #deb32{
-    background-position: 0px 0px;
+    background-position: 0px -101px;
   
 }
 
 #deb64{
-    background-position: 0px -49px;
+    background-position: 0px -151px;
   
+}
+#debian32{
+	background-position: 0px 0px;
+}
+
+#debian64{
+background-position: 0px -50px;
 }
 
 #rpm32{
-    background-position: 0px -99px;
+    background-position: 0px -202px;
   
 }
 
 #rpm64{
-    background-position: 0px -149px;
+    background-position: 0px -252px;
   
 }
 
 #tar32{
-    background-position: 0px -198px;
+    background-position: 0px -302px;
   
+}
+
+#tar64{
+    background-position: 0px -353px;
+
+}
+
+#steamlink{
+    background-position: 0px -452px;
+}
+#baidupan{
+    background-position: 0px -402px;
+
 }
 .appintro .right {
 overflow: hidden;
@@ -482,6 +539,13 @@ padding-left: 30px;
 }
 .right .appinfo {
 margin-bottom: 12px;
+}
+
+.newscontent{
+    margin-bottom: 50px;
+
+    border-bottom: 2px solid #D3D3D3;
+    padding-bottom: 30px;
 }
 .appinfo h3 {
 font-size: 12px;
@@ -516,11 +580,7 @@ font-weight: bold;
    float:left;
 
 }
-.recomend-cen {
-	margin: 0 0 22px -12px;
-	width:752px;
-	height:92px;
-}
+
 
 .recomend-cen a{
 	display: inline-block;
@@ -561,7 +621,7 @@ display: inline-block;
 width: 182px;
 height: 116px;
 border-radius:5px;
-background: url("images/headad.jpg");
+background: url("images/gamebox.jpg");
 }
 
 .allapp {
@@ -673,7 +733,7 @@ line-height: 35px;
 	font-size: 18px;
 	float: left;
 	margin-right: 30px;
-	margin-left: 20px;
+	margin-left: 48px;
 }
 #linuxnews li{
 	display: inline-block;
@@ -693,9 +753,9 @@ line-height: 35px;
 }
 .newspic{
     float: left;
-    width: 150px;
+    width: 125px;
 
-    height: 80px;
+    height: 96px;
     border: 1px solid;
 }
 
@@ -709,20 +769,20 @@ line-height: 35px;
 
 .newspre{
     height: 40px;
-
     width: auto;
     margin-top: 40px;
     margin-left: 175px;
-    border: 1px solid;
+    
 }
 
 /* comment
 -------------------------------------------------------------- */
-.comments-area{
+.singame .comments-area{
    width:45%;
    margin-left: 50%;
    margin-bottom: 50px;
 }
+
 textarea{
    width:320px;
 }
@@ -807,10 +867,11 @@ ol.comment-list{
 
 .comment-form-author{
 	float:left;
-	width:50px;
+	width: 100px;
+	margin-right: 30px;
 }
 .comment-form-email{
-	float:right;
+	float: left;
 }
 .comment-form-author input, .comment-form-email input{
 	width:120px;
@@ -858,11 +919,12 @@ font-family: "Luicida Console", "Courier New", "Courier", monospace;
 #respond #submit {
 font-family: Arial;
 color: #ffffff;
-font-size: 20px;
+font-size: 15px;
 padding: 10px;
 text-decoration: none;
 box-shadow: 0px 1px 3px #666666;
 -webkit-box-shadow: 0px 1px 3px #666666;
+border-radius: 6px;
 -moz-box-shadow: 0px 1px 3px #666666;
 text-shadow: 1px 1px 3px #666666;
 background: -webkit-gradient(linear, 0 0, 0 100%, from(#006ad4), to(#003366));

@@ -16,10 +16,9 @@
 				$iNumberOfPics = count($aPics[0]); // 检查一下至少有一张图片
 				?>
 
-    				<?php if ( $iNumberOfPics > 0 ) { ?>
+    				<?php if ( $iNumberOfPics >= 1 ) { ?>
 				<li><a href="<?php the_permalink(); ?>" target="_blank"><img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>" /></a></li>
-    				<?php } else; ?> 
-				<div style="display:none;"></div>
+    				<?php } ?> 
 					<?php endforeach; ?>			
 					<?php endif; ?>
 		</ul>
@@ -27,46 +26,10 @@
 
 	</div>
 	  </div>
- 
-	  <div class="recbox">
-		<div class="tit">热门游戏
-			<a  href="/allFeaturedList">查看全部&gt;</a>
-		
-		
-		</div>
-		<ul class="applist app-push clearfix">
-<!--------------------Hot Games List-------------------------->
-<?php
-/*<li class="clearfix">
-    <a class="applist-img" href="/detail/13763">
-      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
 
-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
-
-">
-    </a>
-    <div class="app-des">
-      <h6><a href="/detail/13763">汽车报价大全</a></h6>
-      <p>实用工具</p>
-    </div>
-</li>*/
-//一个例子而已
-?>
-
-
-<!-----------------------热门文章函数---------------------------->
-  
-<?php echo ashu_get_hotpost(5); ?>
-		
-		
-					
-			
-<!-------------------------HOT GAMES LIST END----------------------------->	
-		</ul>
-	  </div>
 <div class="recbox">
 		<div class="tit">游戏新闻
-			<a  href="/allFeaturedList">查看全部&gt;</a>
+			<a  href="/?cat=8">查看全部&gt;</a>
 		</div>
 <!-------------------------------头条新闻，置顶----------------------------------->
 		<a class="headline">
@@ -112,28 +75,17 @@ src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921
 		</div>
 		</ul>
 </div>
-	  <div class="recomend-cen">
-	  </div>
+
+
+	  
 	  <div class="recbox">
-		<div class="tit">最新游戏
-			<a   href="/allFeaturedList">查看全部&gt;</a>
+		<div class="tit">热门游戏
+			
 		</div>
 		<ul class="applist app-push clearfix">
-		<li class="clearfix">
- 	   <a class="applist-img" href="/detail/13763">
-      <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
-
-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" alt="汽车报价大全
-
-">
-    </a>
-    <div class="app-des">
-      <h6><a href="/detail/13763">汽车报价大全</a></h6>
-      <p>实用工具</p>
-    </div>
-	</li>
-
-	<li class="clearfix">
+<!--------------------Hot Games List-------------------------->
+<?php
+/*<li class="clearfix">
     <a class="applist-img" href="/detail/13763">
       <img data-src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921-b958-e41b94e09a2b" 
 
@@ -145,7 +97,26 @@ src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921
       <h6><a href="/detail/13763">汽车报价大全</a></h6>
       <p>实用工具</p>
     </div>
-</li>
+</li>*/
+//一个例子而已
+?>
+
+
+<!-----------------------热门文章函数---------------------------->
+  
+<?php echo ashu_get_hotpost(16); ?>
+		
+		
+					
+			
+<!-------------------------HOT GAMES LIST END----------------------------->	
+		</ul>
+	  </div>
+
+	  <div class="recbox">
+		<div class="tit">最新游戏
+		</div>
+		<ul class="applist app-push clearfix">
 
 <?php $posts = get_posts( "category=array(4,5)&numberposts=8" ); ?>
 			<?php if( $posts ) : ?>

@@ -47,17 +47,34 @@
 	    
 			
 		</ul>
-
-		<div id="toplogin">
-            <form>
+		<?php if (is_user_logged_in()) { ?>
+			<div id="toplogin">
+			<div id="usernamelogged"><?php global $current_user;
+			get_currentuserinfo();
+			echo '用户名: ' . $current_user->user_login . "\n";
+			?>
+			</div>
+			<?php wp_register(); ?>
+			<li>
+			<a href="<?php echo wp_logout_url( get_bloginfo('url') ); ?>" title="">退出登录</a>
+			</li>
+			</div>
+		<?php } else { ?>
+		<div id="toplogin" >
+            <form name="toplogin" action="<?php echo get_option('home'); ?>/wp-login.php" method="post">
 				<div>
-					<input id="username" type="text" name="Email" placeholder="  用户名" required>
-					<input id="password" type="password" name="Password" placeholder="  密码" required> 
+					<input id="username" type="text" name="log" placeholder="  用户名"  value="<?php esc_html(stripslashes($user_login)) ?>" />
+					<input id="password" type="password" name="pwd" placeholder="  密码" />
+					<?php do_action( 'login_form' ); ?>
 				</div>
-            <input id="submit" type="submit" id="submit" value="登录">
-            <label id="keepme"><input type="checkbox" checked="checked">记住我</label>                       
+            <input id="submit" type="submit" name="submit" value="登录">
+            <label id="keepme" for="remenberme"><input name="remenberme" type="checkbox" checked="checked" value="forever" />记住</label>
+			<input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
+			<span><a href="<?php echo get_option('home'); ?>/wp-login.php?action=lostpassword">忘记</a></span>
+			<span><a href="<?php echo get_option('home'); ?>/wp-login.php?action=register">注册</a></span>
             </form>
         </div>
+		<?php } ?>
 	</div>
 </header>
 

@@ -20,7 +20,7 @@ get_header(); ?>
 
         <section id="container">
         	<ul id="stage">
-           <li data-tags="aaa,aaab"><img src="<?php bloginfo('template_directory'); ?>/img/shots/21.jpg" alt="Illustration" /></li>
+           
  	
 　　　<?php $posts = get_posts( "category=4&numberposts=8" ); ?>
 			<?php if( $posts ) : ?>
@@ -29,7 +29,7 @@ get_header(); ?>
     foreach((get_the_category()) as $category) {
     echo $category->cat_name  .' ,';
     }
-    ?>"><img src="<?php bloginfo('template_directory'); ?>/img/shots/21.jpg" alt="Illustration" /></li>
+    ?>"><a href="<?php the_permalink(); ?>"><?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'second-post-thumbnail'); endif; ?></a></li>
 	
 
 					<?php endforeach; ?>			

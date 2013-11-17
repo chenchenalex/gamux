@@ -19,7 +19,113 @@ if(function_exists('register_nav_menus')){
     )
     );
 }
+/***************************后台下载模块**************************/
+ 
 
+/* Use the admin_menu action to define the custom boxes */
+add_action( 'add_meta_boxes', 'allfori_metabox' );
+
+/* Use the save_post action to do something with the data entered */
+add_action( 'save_post', 'allfori_metabox_save' );
+
+
+function allfori_metabox() {
+
+	// add_meta_box( $css-id, $title, $callback, $post_type, $context, $priority, $callback_args );
+    add_meta_box( 'allfori_metabox', '添加下载', 
+                'allfori_metabox_admin', 'post', 'side' );
+    add_meta_box( 'allfori_metabox', '添加下载', 
+                'allfori_metabox_admin', 'page', 'side' );
+}
+   
+   
+/* Prints the inner fields for the custom post/page section */
+function allfori_metabox_admin() {
+
+	global $montezuma, $post;
+	wp_nonce_field( 'allfori_non', 'allfori_nonce' ); // Use nonce for verification
+  	$thePostID = $post->ID;
+	$post_id = get_post($thePostID);
+
+	$deb_debian_i386 = get_post_meta( $post->ID, 'deb_debian_i386', true );
+	$deb_debian_amd64 = get_post_meta( $post->ID, 'deb_debian_amd64', true );
+	$deb_i386 = get_post_meta( $post->ID, 'deb_i386', true );
+	$deb_amd64 = get_post_meta( $post->ID, 'deb_amd64', true );
+	$rpm_x86 = get_post_meta( $post->ID, 'deb_x86', true );
+	$rpm_x64 = get_post_meta( $post->ID, 'deb_x64', true );
+	$general_x86 = get_post_meta( $post->ID, 'general_x86', true );
+	$general_x64 = get_post_meta( $post->ID, 'general_x64', true );
+
+	$screen = get_current_screen();
+
+	echo '<p>添加下载项:</p>
+  <div>
+	<span style="width:130px;"><label for="deb_debian_i386">deb_debian_i386</label></span>
+	<input type="text" name="deb_debian_i386" id="deb_debian_i386" value="'. $deb_debian_i386 .'">
+	<span style="width:130px;"><label for="deb_debian_amd64">deb_debian_amd64</label></span>
+	<input type="url" name="deb_debian_amd64" id="deb_debian_amd64" value="'. $deb_debian_amd64 .'">
+  </div>
+  <br />  
+  <div>
+  <span style="width:130px;"><label for="deb_i386">deb_i386</label></span>
+  <input type="url" name="deb_i386" id="deb_i386" value="'. $deb_i386 .'">
+  <span style="width:130px;"><label for="deb_amd64">deb_amd64</label></span>
+  <input type="url" name="deb_amd64" id="deb_amd64" value="'. $deb_amd64 .'">
+  </div>
+  <br />
+  <div>
+  <span style="width:130px;"><label for="rpm_x86">rpm_x86</label></span>
+  <input type="url" name="rpm_x86" id="rpm_x86" value="'. $rpm_x86 .'">
+  <span style="width:130px;"><label for="rpm_x64">rpm_x64</label></span>
+  <input type="url" name="rpm_x64" id="rpm_x64" value="'. $rpm_x64 .'">
+  </div>
+  <br />
+
+  <div>
+  <span style="width:130px;"><label for="general_x86">general_x86</label></span>
+  <input type="url" name="general_x86" id="general_x86" value="'. $general_x86 .'">
+  <span style="width:130px;"><label for="general_x64">general_x64</label></span>
+  <input type="url" name="general_x64" id="general_x64" value="'. $general_x64 .'">
+  </div>
+  <br />'
+  ;
+
+}
+
+
+/* When the post is saved, save our custom data */
+function allfori_metabox_save( $post_id ) {
+
+	// verify if this is an auto save routine. 
+	// If it is our form has not been submitted, so we dont want to do anything
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+		return;
+
+	$mynonce = isset( $_POST['allfori_nonce'] ) ? $_POST['allfori_nonce']: '';
+	if ( ! wp_verify_nonce( $mynonce, 'allfori_non' ) ) 
+		return $post_id;
+
+	if ( 'page' == $_POST['post_type'] ) {
+		if ( ! current_user_can( 'edit_page', $post_id ) )
+			return $post_id;
+	} else {
+		if ( ! current_user_can( 'edit_post', $post_id ) )
+			return $post_id;
+	}
+
+
+	update_post_meta( $post_id, 'deb_debian_i386', $_POST['deb_debian_i386'] );
+	update_post_meta( $post_id, 'deb_debian_amd64', $_POST['deb_debian_amd64'] );
+	update_post_meta( $post_id, 'deb_i386', $_POST['deb_i386'] );
+	update_post_meta( $post_id, 'deb_amd64', $_POST['deb_amd64'] );
+	update_post_meta( $post_id, 'rpm_x86', $_POST['rpm_x86'] );
+	update_post_meta( $post_id, 'rpm_x64', $_POST['rpm_x64'] );
+	update_post_meta( $post_id, 'general_x86', $_POST['general_x86'] );
+	update_post_meta( $post_id, 'general_x64', $_POST['general_x64'] );
+}
+
+
+/********************************下载模块结束********************************/
 //添加缩略图功能
 if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post_thumbnails', array( 'post' ) );

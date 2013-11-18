@@ -33,7 +33,7 @@
         </div>
 
          <div class ="downloadarea" id="downloadarea">
-            <div id="deb32"><a href=""><img src=""></a></div>
+            <div id="deb32"><a href=""></a></div>
             <div id="deb64"><a href=""></a></div>
 			<div id="debian32"><a href="<?php echo get_post_meta( $post->ID, 'deb_debian_i386', true ); ?>"></a></div>
 			<div id="debian64"><a href="<?php echo get_post_meta( $post->ID, 'deb_debian_amd64', true ); ?>"></a></div>
@@ -42,18 +42,19 @@
             <div id="tar32"><a href=""></a></div>
 			<div id="tar64"><a href=""></a></div>
 			<div id="steamlink"><a href=""></a></div>
-			<div id="baidupan"><a href=""></a></div>
-			
+			<div id="baidupan"><a href=""></a></div>			
 			<script type="text/javascript">
-			function checkDiv(){
-            //我这里简单点用的获取标签名称,如果你的id有规律,循环获取id也OK的
-			var obj = document.getElementsByTagName("div");
-			for(var i=0; i<obj.length ;i++){
-            if(obj[i].childNodes[0].href == ""){
-                obj[i].style.display="none";
-				}
+
+		window.onload =function aa(){
+		var obj = document.getElementById("downloadarea");
+		for(var i=0;i<obj.childNodes.length;i++){
+			if(obj.childNodes[i].tagName != "DIV") continue;
+			if(obj.childNodes[i].childNodes[0].getAttribute('href')==""){
+				obj.childNodes[i].style.display = "none";
 			}
-			}
+		}
+	}
+
 			</script>
 			
             </div>

@@ -47,48 +47,80 @@ function allfori_metabox_admin() {
   	$thePostID = $post->ID;
 	$post_id = get_post($thePostID);
 
+	$_version = get_post_meta( $post->ID, '_version', true );
+	$_website =  get_post_meta( $post->ID, '_website', true );
 	$deb_debian_i386 = get_post_meta( $post->ID, 'deb_debian_i386', true );
 	$deb_debian_amd64 = get_post_meta( $post->ID, 'deb_debian_amd64', true );
 	$deb_i386 = get_post_meta( $post->ID, 'deb_i386', true );
 	$deb_amd64 = get_post_meta( $post->ID, 'deb_amd64', true );
-	$rpm_x86 = get_post_meta( $post->ID, 'deb_x86', true );
-	$rpm_x64 = get_post_meta( $post->ID, 'deb_x64', true );
+	$rpm_x86 = get_post_meta( $post->ID, 'rpm_x86', true );
+	$rpm_x64 = get_post_meta( $post->ID, 'rpm_x64', true );
 	$general_x86 = get_post_meta( $post->ID, 'general_x86', true );
 	$general_x64 = get_post_meta( $post->ID, 'general_x64', true );
-
+	$baiduyun = get_post_meta( $post->ID, 'baiduyun', true );
+	$buysite = get_post_meta( $post->ID, 'buysite', true );
+	$other1 = get_post_meta( $post->ID, 'other1', true );
+	$other1_img = get_post_meta( $post->ID, 'other1_img', true );
+	$other2 = get_post_meta( $post->ID, 'other2', true );
+	$other2_img = get_post_meta( $post->ID, 'other2_img', true );	
+	
 	$screen = get_current_screen();
 
-	echo '<p>添加下载项:</p>
-  <div>
-	<span style="width:130px;"><label for="deb_debian_i386">deb_debian_i386</label></span>
-	<input type="text" name="deb_debian_i386" id="deb_debian_i386" value="'. $deb_debian_i386 .'">
-	<span style="width:130px;"><label for="deb_debian_amd64">deb_debian_amd64</label></span>
+	echo '
+  <p>游戏信息</p>
+	<div>
+	<label for="_version">游戏版本号</label>
+	<input type="text" name="_version" id="_version" value="'. $_version .'">
+	<label for="_website">官方网站(支持http标签)</label>
+	<input type="text" name="_website" id="_website" value="'. $_website .'">
+    </div>
+  <p>添加下载地址:（自定义下载选项需添加170*50图片,下载地址请务必带上http://）</p>
+    <div>
+	<label for="deb_debian_i386">deb_debian_i386</label>
+	<input type="url" name="deb_debian_i386" id="deb_debian_i386" value="'. $deb_debian_i386 .'">
+	<label for="deb_debian_amd64">deb_debian_amd64</label>
 	<input type="url" name="deb_debian_amd64" id="deb_debian_amd64" value="'. $deb_debian_amd64 .'">
-  </div>
-  <br />  
-  <div>
-  <span style="width:130px;"><label for="deb_i386">deb_i386</label></span>
-  <input type="url" name="deb_i386" id="deb_i386" value="'. $deb_i386 .'">
-  <span style="width:130px;"><label for="deb_amd64">deb_amd64</label></span>
-  <input type="url" name="deb_amd64" id="deb_amd64" value="'. $deb_amd64 .'">
-  </div>
-  <br />
-  <div>
-  <span style="width:130px;"><label for="rpm_x86">rpm_x86</label></span>
-  <input type="url" name="rpm_x86" id="rpm_x86" value="'. $rpm_x86 .'">
-  <span style="width:130px;"><label for="rpm_x64">rpm_x64</label></span>
-  <input type="url" name="rpm_x64" id="rpm_x64" value="'. $rpm_x64 .'">
-  </div>
-  <br />
-
-  <div>
-  <span style="width:130px;"><label for="general_x86">general_x86</label></span>
-  <input type="url" name="general_x86" id="general_x86" value="'. $general_x86 .'">
-  <span style="width:130px;"><label for="general_x64">general_x64</label></span>
-  <input type="url" name="general_x64" id="general_x64" value="'. $general_x64 .'">
-  </div>
-  <br />'
-  ;
+    </div>
+    <br />  
+    <div>
+    <label for="deb_i386">deb_i386</label>
+    <input type="url" name="deb_i386" id="deb_i386" value="'. $deb_i386 .'">
+    <label for="deb_amd64">deb_amd64</label>
+    <input type="url" name="deb_amd64" id="deb_amd64" value="'. $deb_amd64 .'">
+    </div>
+    <br />
+    <div>
+    <label for="rpm_x86">rpm_x86</label>
+    <input type="url" name="rpm_x86" id="rpm_x86" value="'. $rpm_x86 .'">
+    <label for="rpm_x64">rpm_x64</label>
+    <input type="url" name="rpm_x64" id="rpm_x64" value="'. $rpm_x64 .'">
+    </div>
+    <br />
+    <div>
+    <label for="general_x86">general_x86</label>
+    <input type="url" name="general_x86" id="general_x86" value="'. $general_x86 .'">
+    <label for="general_x64">general_x64</label>
+    <input type="url" name="general_x64" id="general_x64" value="'. $general_x64 .'">
+    </div>
+    <br />
+    <div>
+    <label for="baiduyun">百度网盘</label>
+    <input type="url" name="baiduyun" id="baiduyun" value="'. $baiduyun .'">
+    <label for="buysite">官方下载/购买</label>
+    <input type="url" name="buysite" id="buysite" value="'. $buysite .'">  
+    </div>
+    <div>
+    <label for="other1">自定义下载地址1</label>
+    <input type="url" name="other1" id="other1" value="'. $other1 .'">
+    <label for="other1_img">其他下载地址1的图片</label>
+    <input type="url" name="other1_img" id="other1_img" value="'. $other1_img .'">  
+    </div>
+    <div>
+    <label for="other2">自定义下载地址2</label>
+    <input type="url" name="other2" id="other2" value="'. $other2 .'">
+    <label for="other2_img">其他下载地址2的图片</label>
+    <input type="url" name="other2_img" id="other2_img" value="'. $other2_img .'">  
+    </div>';
 
 }
 
@@ -113,7 +145,8 @@ function allfori_metabox_save( $post_id ) {
 			return $post_id;
 	}
 
-
+	update_post_meta( $post_id, '_version', $_POST['_version'] );
+	update_post_meta( $post_id, '_website', $_POST['_website'] );
 	update_post_meta( $post_id, 'deb_debian_i386', $_POST['deb_debian_i386'] );
 	update_post_meta( $post_id, 'deb_debian_amd64', $_POST['deb_debian_amd64'] );
 	update_post_meta( $post_id, 'deb_i386', $_POST['deb_i386'] );
@@ -122,6 +155,12 @@ function allfori_metabox_save( $post_id ) {
 	update_post_meta( $post_id, 'rpm_x64', $_POST['rpm_x64'] );
 	update_post_meta( $post_id, 'general_x86', $_POST['general_x86'] );
 	update_post_meta( $post_id, 'general_x64', $_POST['general_x64'] );
+	update_post_meta( $post_id, 'baiduyun', $_POST['baiduyun'] );
+	update_post_meta( $post_id, 'buysite', $_POST['buysite'] );
+	update_post_meta( $post_id, 'other1', $_POST['other1'] );
+	update_post_meta( $post_id, 'other1_img', $_POST['other1_img'] );
+	update_post_meta( $post_id, 'other2', $_POST['other2'] );
+	update_post_meta( $post_id, 'other2_img', $_POST['other2_img'] );	
 }
 
 
@@ -336,4 +375,28 @@ echo $output;
 id换成分类id
 */
 
+
+
+// 说明：获取当前页面完整URL
+function curPageURL() 
+{
+     $pageURL = 'http';
+ 
+    if ($_SERVER["HTTPS"] == "on") 
+    {
+         $pageURL .= "s";
+     }
+     $pageURL .= "://";
+ 
+    if ($_SERVER["SERVER_PORT"] != "80") 
+    {
+         $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
+     } 
+    else 
+    {
+         $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+     }
+     return $pageURL;
+ }
+ 
 ?>

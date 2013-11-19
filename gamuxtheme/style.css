@@ -475,6 +475,11 @@ border-right: 1px solid #e9e9e9;
     margin-left:30px;
 }
 
+.img img{
+	border-radius:15px;
+}
+.downloadarea{
+}
 
 .downloadarea div{
     float: left;
@@ -536,11 +541,49 @@ background-position: 0px -50px;
 overflow: hidden;
 font-size: 12px;
 padding-left: 30px;
+min-height: 320px;
 }
 .right .appinfo {
 margin-bottom: 12px;
 }
+.tabdes_select,.tabdownload,.tabdes,.tabdownload_select{
+    display: block;
+    float:left;
+    width: 53px;
+    height: 20px;
+    padding: 5px 20px 3px 20px;
+    background: url(images/tabbuttons.png);
+}
 
+.pslide,.downloadarea{
+	clear:both;
+}
+.tabdes{
+    background-position: 0 -28px;
+
+}
+.tabdes_select{
+    background-position: 0 0;
+	
+}
+
+.tabdownload{
+    background-position: -93px 29px;
+
+}
+
+.tabdownload_select{
+    background-position: -93px 0px;
+
+}
+.apptab{
+	margin-bottom: 20px;
+	height: 30px;
+}
+.apptab a{
+    text-align: center;
+
+}
 .newscontent{
     margin-bottom: 50px;
 
@@ -872,10 +915,20 @@ ol.comment-list{
 }
 .comment-form-email{
 	float: left;
+	width: 100px;
+	margin-right: 50px;
 }
 .comment-form-author input, .comment-form-email input{
 	width:120px;
 	float:left;
+}
+
+.comment-form-comment{
+	float:left;
+}
+
+.form-allowed-tags{
+	clear:both;
 }
 .comment-respond code{
 	font-size:10px;

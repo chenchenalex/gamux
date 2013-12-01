@@ -98,8 +98,8 @@ a:hover{
 	overflow:hidden;
 	width: 830px;
 	margin:0 auto;
-	height:500px;
-	
+	min-height:500px;
+	margin-bottom:20px;
 }
 
 #container li{

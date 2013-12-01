@@ -38,7 +38,8 @@
 			<a class="logo" href="<?php echo site_url(); ?>">
       			<?php bloginfo('name'); ?>
     			</a>
-		</h1>			
+		</h1>
+		<div class="menuarea">			
 		<ul id ="menu" class="menu">
 	  		<?php wp_nav_menu( array(
 				'theme_location' =>  'header-menu',
@@ -47,6 +48,11 @@
 	    
 			
 		</ul>
+		<ul id ="submenu">
+			<li>Wine游戏</li>
+			<li>| 网页游戏</li>
+		</ul>
+		</div>
 		<?php if (is_user_logged_in()) { ?>
 			<div id="toplogin">
 			<div id="usernamelogged"><?php global $current_user;

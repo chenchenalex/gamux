@@ -6,7 +6,7 @@
 
 	  <div id="focus">
 		<ul>
-		<?php $posts = get_posts( "category=8&numberposts=5" ); ?>
+		<?php $posts = get_posts( "category=14&numberposts=5" ); ?>
 			<?php if( $posts ) : ?>
 			<?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
 				<?php 
@@ -29,7 +29,7 @@
 
 <div class="recbox">
 		<div class="tit">游戏新闻
-			<a  href="/?cat=8">查看全部&gt;</a>
+			<a  href="<?php geturl('news','cat'); ?>">查看全部&gt;</a>
 		</div>
 <!-------------------------------头条新闻，置顶----------------------------------->
 		<a class="headline">
@@ -37,7 +37,7 @@
                $sticky = get_option('sticky_posts');
                rsort( $sticky );
                $sticky = array_slice( $sticky, 0, 1);
-               query_posts( array( 'post__in' => $sticky, 'ignore_sticky_posts' => 1,'showposts' => 1,'cat' =>8) );
+               query_posts( array( 'post__in' => $sticky, 'ignore_sticky_posts' => 1,'showposts' => 1,'cat' =>14) );
                ?>
                <?php if (have_posts()) : ?>
                <?php while (have_posts()) : the_post(); ?>
@@ -51,7 +51,7 @@
 <!-----------------------------------本站新闻--------------------------------------->
 		<div class = "lnews">
 		<h5>本站新闻</h5>
-		<?php $posts = get_posts( "category=9&numberposts=8" ); ?>
+		<?php $posts = get_posts( "category=49&numberposts=8" ); ?>
 			<?php if( $posts ) : ?>
 			<?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
 				<li><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a></li>
@@ -63,8 +63,8 @@
 		</div>
 <!----------------------------------行业新闻--------------------------------------->
 		<div class = "rnews">
-		<h5>行业新闻</h5>
-			<?php $posts = get_posts( "category=10&numberposts=8" ); ?>
+		<h5>业界新闻</h5>
+			<?php $posts = get_posts( "category=50&numberposts=8" ); ?>
 			<?php if( $posts ) : ?>
 			<?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
 				<li><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a></li>
@@ -118,7 +118,7 @@ src="http://file.market.xiaomi.com/thumbnail/PNG/l62/AppStore/b8731d8e-a859-4921
 		</div>
 		<ul class="applist app-push clearfix">
 
-<?php $posts = get_posts( "category=array(4,5)&numberposts=8" ); ?>
+<?php $posts = get_posts( "category=array(6,7,8,9)&numberposts=8" ); ?>
 			<?php if( $posts ) : ?>
 			<?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
 				<li class="clearfix">
@@ -145,28 +145,7 @@ src="<?php echo nosrc_post_thumbnail(); ?>" alt="<?php the_title(); ?>">
 					<?php endif; ?>
 <!---------------------------------最新游戏结束------------------------------------->
 	  </div>
-	  <section id="content" class="row">
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<div id="post" class="row">
-			<div class="row">
-			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			</div>
-			<div class="row">
-		    	<span>作者：<?php the_author(); ?>  <?php the_time('Y年m月d日'); ?></span>
-			</div>			
-			<div class="row">
-			<?php the_content('阅读全文'); ?>
-			<?php edit_post_link('编辑', '<span class="edit-link">', '</span>' ); ?>
-			</div>
-			<div class="row">
-			<?php comments_template('', true); ?>
-			</div>
-		</div>s
-		<?php endwhile; ?>
-		<?php else: ?>
-		<p>抱歉，未找到此文章。</p>
-		<?php endif; ?>
-	  </section>
+
 </div>
 <!-- main end -->
 <!-- right sidebar begin -->

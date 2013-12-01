@@ -22,21 +22,21 @@ get_header(); ?>
         	<ul id="stage">
            
  	
-　　　<?php $posts = get_posts( "category=4&numberposts=8" ); ?>
+　　　<?php $posts = get_posts( "category=6&numberposts=2000" ); ?>
 			<?php if( $posts ) : ?>
 			<?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
-			<li data-tags="<?php
-    foreach((get_the_category()) as $category) {
-    echo $category->cat_name  .' ,';
-    }
-    ?>"><a href="<?php the_permalink(); ?>"><?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'second-post-thumbnail'); endif; ?></a></li>
+			<li data-tags="<?php foreach((get_the_category()) as $category) {
+    echo $category->cat_name  .',';}?>">
+                <a href="<?php the_permalink(); ?>"><?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'second-post-thumbnail'); endif; ?>
+                </a>
+            </li>
 	
 
 					<?php endforeach; ?>			
 					<?php endif; ?>
             </ul>
         </section>
-		
+		<?php pagination($query_string); ?> 
 	     <script src="<?php bloginfo('template_directory'); ?>/js/jquery.quicksand.js"></script>
         <script src="<?php bloginfo('template_directory'); ?>/js/script.js"></script>
 

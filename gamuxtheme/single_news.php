@@ -1,5 +1,4 @@
-<?php get_header(); ?>
-新闻页面
+﻿<?php get_header(); ?>
 <div class="main">
     <div class="breadcrumb">
         <a href="<?php bloginfo(url); ?>">首页</a> <span class="divider"> &gt; </span>

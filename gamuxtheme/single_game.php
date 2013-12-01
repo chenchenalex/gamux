@@ -23,8 +23,9 @@
       <div class="right">
         <div class="appinfo" id="t1" style="display:block;">
 		  <div class="apptab">
-		  <div class="tabdes_select"><a href="<?php echo curPageURL(); ?>#" class="ccc" onclick="javascript:show(&#39;t1&#39;);hide(&#39;t2&#39;);">应用介绍</a></div>
-		  <div class="tabdownload"><a href="<?php echo curPageURL(); ?>#" onclick="javascript:show(&#39;t2&#39;);hide(&#39;t1&#39;);">游戏下载</a></div>
+		  <div class="tabdes_select"><a href="<?php echo curPageURL(); ?>#" class="ccc" onclick="javascript:show(&#39;t1&#39;);hide(&#39;t2&#39;);hide(&#39;t3&#39;);">应用介绍</a></div>
+		  <div class="tabdownload"><a href="<?php echo curPageURL(); ?>#" onclick="javascript:show(&#39;t2&#39;);hide(&#39;t1&#39;);hide(&#39;t3&#39;);">游戏下载</a></div>
+		  <div class="tabaddon"><a href="<?php echo curPageURL(); ?>#" onclick="javascript:show(&#39;t3&#39;);hide(&#39;t1&#39;);hide(&#39;t2&#39;);">额外程序</a></div>
 		  </div>
           <div class="pslide clearfix">    
 			<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); setPostViews(get_the_ID()); ?>
@@ -34,10 +35,11 @@
           </div>
         </div>
 
-         <div id="t2" style="display: none; ">
+         <div id="t2" class="appinfo" style="display: none; ">
 		  <div class="apptab">
-		 <div class="tabdes"><a href="<?php echo curPageURL(); ?>#" onclick="javascript:show(&#39;t1&#39;);hide(&#39;t2&#39;);">应用介绍</a></div>
-		   <div class="tabdownload_select"><a href="<?php echo curPageURL(); ?>#" class="ccc" onclick="javascript:show(&#39;t2&#39;);hide(&#39;t1&#39;)">游戏下载</a></div>
+		 <div class="tabdes"><a href="<?php echo curPageURL(); ?>#" onclick="javascript:show(&#39;t1&#39;);hide(&#39;t2&#39;);hide(&#39;t3&#39;);">应用介绍</a></div>
+		 <div class="tabdownload_select"><a href="<?php echo curPageURL(); ?>#" class="ccc" onclick="javascript:show(&#39;t2&#39;);hide(&#39;t1&#39;);hide(&#39;t3&#39;);">游戏下载</a></div>
+		 <div class="tabaddon"><a href="<?php echo curPageURL(); ?>#" onclick="javascript:show(&#39;t3&#39;);hide(&#39;t1&#39;);hide(&#39;t2&#39;);">额外程序</a></div>
 		  </div>
 			<div class="downloadarea clearfix" id="downarea">
             <div id="deb32"><a href="<?php echo get_post_meta( $post->ID, 'deb_i386', true ); ?>"></a></div>
@@ -67,6 +69,15 @@
 			</script>
 			</div>
             </div>
+
+          <div class="appinfo" id="t3" style="display:none;">
+		  <div class="apptab">
+		  <div class="tabdes"><a href="<?php echo curPageURL(); ?>#" class="ccc" onclick="javascript:show(&#39;t1&#39;);hide(&#39;t2&#39;);hide(&#39;t3&#39;);">应用介绍</a></div>
+		  <div class="tabdownload"><a href="<?php echo curPageURL(); ?>#" onclick="javascript:show(&#39;t2&#39;);hide(&#39;t1&#39;);hide(&#39;t3&#39;);">游戏下载</a></div>
+		  <div class="tabaddon_select"><a href="<?php echo curPageURL(); ?>#" onclick="javascript:show(&#39;t3&#39;);hide(&#39;t1&#39;);hide(&#39;t2&#39;);">额外程序</a></div>
+		  </div>
+          
+        </div>
 <script type="text/javascript">
 <!--
 function show(strtype) {document.all.item(strtype).style.display = "block";}

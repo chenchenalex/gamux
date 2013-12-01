@@ -24,7 +24,8 @@
             <div class="description">            
               <p>Linux游戏下载站&mdash;为Linux用户的娱乐性而奋斗！&mdash;非盈利&mdash;标准大陆中文</p>
               <p>谢谢一直支持我们的开源社区和开源界朋友，Linux万岁！</p>
-              <p>Powered by WordPress <?php bloginfo('version'); ?> and Bootstrap 3.0</p>
+              <p>Powered by WordPress <?php bloginfo('version'); ?> and HTML5</p>
+              <p>We only promise that our website is 100% compatible to browsers under Linux. </p>
             </div>            
           </div>
 		</footer><!-- siteinfo -->
